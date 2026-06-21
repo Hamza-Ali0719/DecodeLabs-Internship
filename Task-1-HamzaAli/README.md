@@ -254,28 +254,11 @@ while True:
 
 ## 8. Sample Execution
 
-The transcript below illustrates a typical interactive session with DecodeBot, as produced by the `run()` method:
+Below is a screenshot of the chatbot running in the terminal:
 
-```text
-DecodeBot: Hi! Type 'bye' to exit.
+![Chatbot Demo Output](demo_output.png)
 
-You: hello
-DecodeBot: Hi there! How can I help you today?
-You: what is your name
-DecodeBot: I'm DecodeBot, a rule-based chatbot built for DecodeLabs.
-You: how are you
-DecodeBot: All systems operational. Thanks for asking!
-You: what can you do
-DecodeBot: I'm a simple chatbot. Try saying 'hello', 'how are you', or 'what is your name'.
-You: tell me a joke
-DecodeBot: I'm not sure I understand. Could you rephrase?
-You: bye
-DecodeBot: Goodbye! Have a great day!
-```
-
-Each line of this exchange is simultaneously written to `chatbot.log` with a timestamp and log level, allowing the entire session to be reconstructed and reviewed after the program exits.
-
----
+The transcript below illustrates a typical interactive session...
 
 ## 9. Testing & Validation
 
