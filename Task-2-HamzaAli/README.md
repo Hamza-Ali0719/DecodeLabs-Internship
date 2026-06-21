@@ -220,11 +220,14 @@ from sklearn.metrics import (
 # ------------------------------------------------------------------
 # LOGGING CONFIGURATION (Dual Channel: File + Console)
 # ------------------------------------------------------------------
+script_dir = os.path.dirname(os.path.abspath(__file__))
+log_file_path = os.path.join(script_dir, "classification.log")
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
     handlers=[
-        logging.FileHandler("classification.log"),
+        logging.FileHandler(log_file_path),  # 👈 Use the variable here
         logging.StreamHandler(sys.stdout)
     ]
 )
@@ -246,6 +249,7 @@ class OrderStatusClassifier:
             target_col (str): Name of the target column to predict.
         """
         self.file_path = file_path
+        self.script_dir = os.path.dirname(os.path.abspath(file_path))
         self.target_col = target_col
         self.df = None
         self.X = None
@@ -260,6 +264,7 @@ class OrderStatusClassifier:
         self.encoders = {}
         self.feature_names = None
         logger.info(f"Classifier initialized with file: {file_path}")
+
 
     def load_data(self) -> None:
         """
@@ -408,8 +413,8 @@ class OrderStatusClassifier:
 
         # Print results
         logger.info("-" * 60)
-        logger.info(f"🔹 MODEL ACCURACY: {acc:.3f} ({acc*100:.1f}%)")
-        logger.info(f"🔹 BASELINE ACCURACY (Guess Majority Class): {baseline_acc:.3f} ({baseline_acc*100:.1f}%)")
+        logger.info(f" MODEL ACCURACY: {acc:.3f} ({acc*100:.1f}%)")
+        logger.info(f" BASELINE ACCURACY (Guess Majority Class): {baseline_acc:.3f} ({baseline_acc*100:.1f}%)")
         logger.info("-" * 60)
         logger.info("\nCLASSIFICATION REPORT:\n")
         logger.info(report_str)
@@ -418,11 +423,11 @@ class OrderStatusClassifier:
 
         # Professional Interpretation
         if acc < baseline_acc:
-            logger.warning("⚠️  MODEL UNDERPERFORMS BASELINE.")
+            logger.warning("  MODEL UNDERPERFORMS BASELINE.")
             logger.warning("This typically means the features have no predictive relationship with the target.")
             logger.warning("It is NOT a coding error; it indicates the dataset is likely random/synthetic in nature.")
         else:
-            logger.info("✅ Model outperforms the baseline. Features have predictive power.")
+            logger.info(" Model outperforms the baseline. Features have predictive power.")
 
         # Store results for later use
         self.results = {
@@ -443,7 +448,8 @@ class OrderStatusClassifier:
     def _save_report_to_file(self, report_str: str, acc: float, baseline: float) -> None:
         """Save evaluation metrics to a results.txt file for record-keeping."""
         try:
-            with open("classification_results.txt", "w") as f:
+            file_path = os.path.join(self.script_dir, "classification_results.txt")
+            with open(file_path, "w") as f:
                 f.write("=" * 60 + "\n")
                 f.write("CLASSIFICATION RESULTS\n")
                 f.write(f"Accuracy: {acc:.3f}\n")
@@ -472,7 +478,8 @@ class OrderStatusClassifier:
             plt.ylabel("Actual")
             plt.xlabel("Predicted")
             plt.tight_layout()
-            plt.savefig("confusion_matrix.png", dpi=300)
+            file_path = os.path.join(self.script_dir, "confusion_matrix.png")
+            plt.savefig(file_path, dpi=300)
             logger.info("Confusion matrix plot saved to 'confusion_matrix.png'")
             # Close the plot to free memory
             plt.close()
@@ -505,7 +512,7 @@ class OrderStatusClassifier:
             top_positive_idx = np.argsort(coefs)[-5:][::-1]
             top_negative_idx = np.argsort(coefs)[:5]
 
-            logger.info(f"\n🔹 Class: {class_name}")
+            logger.info(f"\n Class: {class_name}")
             logger.info("  Top 5 Features INCREASING probability:")
             for idx in top_positive_idx:
                 logger.info(f"    + {self.feature_names[idx]}: {coefs[idx]:.3f}")
