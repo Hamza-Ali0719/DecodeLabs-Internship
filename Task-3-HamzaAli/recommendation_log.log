@@ -1,0 +1,119 @@
+2026-06-22 00:14:32,987 - INFO - Recommender initialized with dataset: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_3_AI_Recommendation_Logic\raw_skills.csv
+2026-06-22 00:14:32,988 - INFO - 
+============================================================
+2026-06-22 00:14:32,988 - INFO - STARTING RECOMMENDATION PIPELINE
+2026-06-22 00:14:32,988 - INFO - ============================================================
+2026-06-22 00:14:32,989 - ERROR - File Error: Dataset not found: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_3_AI_Recommendation_Logic\raw_skills.csv
+2026-06-22 00:15:45,897 - INFO - Recommender initialized with dataset: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_3_AI_Recommendation_Logic\raw_skills.csv
+2026-06-22 00:15:45,898 - INFO - 
+============================================================
+2026-06-22 00:15:45,898 - INFO - STARTING RECOMMENDATION PIPELINE
+2026-06-22 00:15:45,899 - INFO - ============================================================
+2026-06-22 00:15:45,986 - INFO - Data loaded successfully. Shape: (15, 21)
+2026-06-22 00:15:45,992 - INFO - Total job roles: 15
+2026-06-22 00:15:45,992 - INFO - Skill columns: 20
+2026-06-22 00:15:45,993 - INFO - 
+------------------------------------------------------------
+2026-06-22 00:15:45,994 - INFO - SAMPLE DATA (First 3 rows):
+2026-06-22 00:15:46,133 - INFO - 
+             Job_Role  Python  Java  SQL  Cloud  Automation  JavaScript  React  Docker  ...  GCP  CI/CD  DevOps  Linux  Networking  Cybersecurity  Data_Science  AI/ML  Tableau
+0     Cloud Architect       0     1    1      1           1           0      0       1  ...    1      1       1      1           1              0             0      0        0
+1    Backend Engineer       1     1    1      0           0           0      0       0  ...    0      0       0      0           0              0             0      0        0
+2  Frontend Developer       0     0    0      0           0           1      1       0  ...    0      0       0      0           0              0             0      0        0
+
+[3 rows x 21 columns]
+2026-06-22 00:15:46,134 - INFO - ------------------------------------------------------------
+2026-06-22 00:15:46,134 - INFO - Starting preprocessing...
+2026-06-22 00:15:46,149 - INFO - Created Skills_String column. Sample:
+2026-06-22 00:15:46,150 - INFO -   0 1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 0 0 0 0...
+2026-06-22 00:15:46,151 - INFO - Preprocessing complete.
+2026-06-22 00:15:46,152 - INFO - Starting TF-IDF vectorization...
+2026-06-22 00:19:21,686 - INFO - Starting preprocessing...
+2026-06-22 00:24:30,378 - INFO - Starting TF-IDF vectorization...
+2026-06-22 00:26:12,173 - INFO - Starting TF-IDF vectorization...
+2026-06-22 00:35:11,583 - INFO - Recommender initialized with dataset: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_3_AI_Recommendation_Logic\raw_skills.csv
+2026-06-22 00:35:11,584 - INFO - 
+============================================================
+2026-06-22 00:35:11,584 - INFO - STARTING RECOMMENDATION PIPELINE
+2026-06-22 00:35:11,585 - INFO - ============================================================
+2026-06-22 00:35:11,589 - INFO - Data loaded successfully. Shape: (15, 21)
+2026-06-22 00:35:11,590 - INFO - Total job roles: 15
+2026-06-22 00:35:11,591 - INFO - Skill columns: 20
+2026-06-22 00:35:11,591 - INFO - 
+------------------------------------------------------------
+2026-06-22 00:35:11,592 - INFO - SAMPLE DATA (First 3 rows):
+2026-06-22 00:35:11,760 - INFO - 
+             Job_Role  Python  Java  SQL  Cloud  Automation  JavaScript  React  Docker  ...  GCP  CI/CD  DevOps  Linux  Networking  Cybersecurity  Data_Science  AI/ML  Tableau
+0     Cloud Architect       0     1    1      1           1           0      0       1  ...    1      1       1      1           1              0             0      0        0
+1    Backend Engineer       1     1    1      0           0           0      0       0  ...    0      0       0      0           0              0             0      0        0
+2  Frontend Developer       0     0    0      0           0           1      1       0  ...    0      0       0      0           0              0             0      0        0
+
+[3 rows x 21 columns]
+2026-06-22 00:35:11,760 - INFO - ------------------------------------------------------------
+2026-06-22 00:35:11,760 - INFO - Starting preprocessing...
+2026-06-22 00:35:11,811 - INFO - Created Skills_String column. Sample:
+2026-06-22 00:35:11,812 - INFO -   Java SQL Cloud Automation Docker Kubernetes AWS Azure GCP CI/CD DevOps Linux Networking
+2026-06-22 00:35:11,812 - INFO - Preprocessing complete.
+2026-06-22 00:35:11,813 - INFO - Starting TF-IDF vectorization...
+2026-06-22 00:35:11,820 - INFO - TF-IDF matrix shape: (15, 22)
+2026-06-22 00:35:11,821 - INFO - Vocabulary size: 22
+2026-06-22 00:35:11,821 - INFO - Sample features: ['ai', 'automation', 'aws', 'azure', 'cd', 'ci', 'cloud', 'cybersecurity', 'data_science', 'devops']
+2026-06-22 00:35:11,822 - INFO - Vectorization complete.
+2026-06-22 00:35:11,822 - INFO - 
+============================================================
+2026-06-22 00:35:11,822 - INFO - USER SKILLS INPUT
+2026-06-22 00:35:11,823 - INFO - ============================================================
+2026-06-22 00:35:25,047 - INFO - User added skill: 1
+2026-06-22 00:35:29,544 - INFO - User added skill: 2
+2026-06-22 00:35:32,724 - INFO - User added skill: 3
+2026-06-22 00:35:32,725 - INFO - User skills collected: ['1', '2', '3']
+2026-06-22 00:35:32,735 - INFO - Similarity scores calculated for 15 roles.
+2026-06-22 00:35:32,748 - INFO - Results saved to 'd:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_3_AI_Recommendation_Logic\recommendation_results.txt'
+2026-06-22 00:35:32,752 - INFO - 
+============================================================
+2026-06-22 00:35:32,756 - INFO - RECOMMENDATION PIPELINE COMPLETED SUCCESSFULLY.
+2026-06-22 00:35:32,757 - INFO - Check 'recommendation_log.log' and 'recommendation_results.txt'
+2026-06-22 00:35:32,758 - INFO - ============================================================
+2026-06-22 00:36:40,842 - INFO - Recommender initialized with dataset: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_3_AI_Recommendation_Logic\raw_skills.csv
+2026-06-22 00:36:40,843 - INFO - 
+============================================================
+2026-06-22 00:36:40,843 - INFO - STARTING RECOMMENDATION PIPELINE
+2026-06-22 00:36:40,843 - INFO - ============================================================
+2026-06-22 00:36:40,849 - INFO - Data loaded successfully. Shape: (15, 21)
+2026-06-22 00:36:40,850 - INFO - Total job roles: 15
+2026-06-22 00:36:40,850 - INFO - Skill columns: 20
+2026-06-22 00:36:40,851 - INFO - 
+------------------------------------------------------------
+2026-06-22 00:36:40,851 - INFO - SAMPLE DATA (First 3 rows):
+2026-06-22 00:36:40,898 - INFO - 
+             Job_Role  Python  Java  SQL  Cloud  Automation  JavaScript  React  Docker  ...  GCP  CI/CD  DevOps  Linux  Networking  Cybersecurity  Data_Science  AI/ML  Tableau
+0     Cloud Architect       0     1    1      1           1           0      0       1  ...    1      1       1      1           1              0             0      0        0
+1    Backend Engineer       1     1    1      0           0           0      0       0  ...    0      0       0      0           0              0             0      0        0
+2  Frontend Developer       0     0    0      0           0           1      1       0  ...    0      0       0      0           0              0             0      0        0
+
+[3 rows x 21 columns]
+2026-06-22 00:36:40,898 - INFO - ------------------------------------------------------------
+2026-06-22 00:36:40,899 - INFO - Starting preprocessing...
+2026-06-22 00:36:40,902 - INFO - Created Skills_String column. Sample:
+2026-06-22 00:36:40,903 - INFO -   Java SQL Cloud Automation Docker Kubernetes AWS Azure GCP CI/CD DevOps Linux Networking
+2026-06-22 00:36:40,906 - INFO - Preprocessing complete.
+2026-06-22 00:36:40,907 - INFO - Starting TF-IDF vectorization...
+2026-06-22 00:36:40,911 - INFO - TF-IDF matrix shape: (15, 22)
+2026-06-22 00:36:40,911 - INFO - Vocabulary size: 22
+2026-06-22 00:36:40,912 - INFO - Sample features: ['ai', 'automation', 'aws', 'azure', 'cd', 'ci', 'cloud', 'cybersecurity', 'data_science', 'devops']
+2026-06-22 00:36:40,912 - INFO - Vectorization complete.
+2026-06-22 00:36:40,913 - INFO - 
+============================================================
+2026-06-22 00:36:40,913 - INFO - USER SKILLS INPUT
+2026-06-22 00:36:40,914 - INFO - ============================================================
+2026-06-22 00:36:45,226 - INFO - User added skill: Python
+2026-06-22 00:36:49,519 - INFO - User added skill: Sql
+2026-06-22 00:36:54,111 - INFO - User added skill: Cloud
+2026-06-22 00:36:54,111 - INFO - User skills collected: ['Python', 'Sql', 'Cloud']
+2026-06-22 00:36:54,119 - INFO - Similarity scores calculated for 15 roles.
+2026-06-22 00:36:54,144 - INFO - Results saved to 'd:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_3_AI_Recommendation_Logic\recommendation_results.txt'
+2026-06-22 00:36:54,144 - INFO - 
+============================================================
+2026-06-22 00:36:54,145 - INFO - RECOMMENDATION PIPELINE COMPLETED SUCCESSFULLY.
+2026-06-22 00:36:54,145 - INFO - Check 'recommendation_log.log' and 'recommendation_results.txt'
+2026-06-22 00:36:54,146 - INFO - ============================================================
