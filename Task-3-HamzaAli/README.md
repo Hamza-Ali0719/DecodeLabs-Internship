@@ -1,22 +1,27 @@
-🚀 Tech Stack Recommender
 
-<p align="center"> <b>AI-Powered Job Role Recommendation System using TF-IDF & Cosine Similarity</b> </p> <p align="center"> <img src="https://img.shields.io/badge/Python-3.9+-blue?logo=python"> <img src="https://img.shields.io/badge/ML-TF--IDF-orange"> <img src="https://img.shields.io/badge/Algorithm-Cosine%20Similarity-green"> <img src="https://img.shields.io/badge/Status-Completed-success"> <img src="https://img.shields.io/badge/License-MIT-lightgrey"> </p>
-📌 Overview
+# 🚀 Tech Stack Recommender
 
-The Tech Stack Recommender is an AI-based system that suggests the most relevant job roles based on user-provided skills.
+### AI-Powered Job Role Recommendation System using TF-IDF & Cosine Similarity
+
+---
+
+## 📌 Overview
+
+The **Tech Stack Recommender** is an AI-based system that suggests the most relevant job roles based on user-provided skills.
 
 It uses:
-
 📊 TF-IDF Vectorization (Text → Numbers)
 📐 Cosine Similarity (Matching algorithm)
 🧠 Content-Based Filtering (No user history required)
 
 👉 Example:
+**Input:** Python, Cloud, Automation
+**Output:** Cloud Architect, DevOps Engineer, SRE
 
-Input: Python, Cloud, Automation
-Output: Cloud Architect, DevOps Engineer, SRE
+---
 
-🎯 Features
+## 🎯 Features
+
 ✔️ AI-based job role recommendations
 ✔️ TF-IDF text vectorization
 ✔️ Cosine similarity scoring
@@ -24,47 +29,94 @@ Output: Cloud Architect, DevOps Engineer, SRE
 ✔️ Progress bar visualization
 ✔️ Input validation (minimum 3 skills required)
 ✔️ Logging system (console + file)
-✔️ Results saved to .txt file
-🧠 How It Works
-User Skills → TF-IDF Vector → Cosine Similarity → Ranking → Top Jobs
-🔄 Pipeline
-User enters skills
-Skills are converted into text vector
-Dataset is vectorized using TF-IDF
-Similarity is calculated
-Top matching job roles are returned
-🏗️ Project Structure
+✔️ Results saved to `.txt` file
+
+---
+
+## 🧠 How It Works
+
+**User Skills → TF-IDF Vector → Cosine Similarity → Ranking → Top Jobs**
+
+---
+
+### 🔄 Pipeline
+
+* User enters skills
+* Skills are converted into text vector
+* Dataset is vectorized using TF-IDF
+* Similarity is calculated
+* Top matching job roles are returned
+
+---
+
+## 🏗️ Project Structure
+
+```text
 Tech-Stack-Recommender/
 │
-
 ├── tech_stack_recommender.py     # Main AI system
 ├── raw_skills.csv                # Dataset (skills → roles)
-├── recommendation_log.log       # Logs (auto-generated)
-├── recommendation_results.txt   # Output file
-├── README.md                    # Documentation
-└── screenshots/                 # Output images
-⚙️ Tech Stack
-Technology	Purpose
-Python	Core programming
-Pandas	Data handling
-NumPy	Numerical operations
-Scikit-learn	ML algorithms (TF-IDF, Cosine Similarity)
-Logging	Tracking execution
-🚀 Installation & Setup
-1️⃣ Clone the Repository
+├── recommendation_log.log        # Logs (auto-generated)
+├── recommendation_results.txt    # Output file
+├── README.md                     # Documentation
+└── screenshots/                  # Output images
+```
+
+---
+
+## ⚙️ Tech Stack
+
+| Technology   | Purpose                                   |
+| ------------ | ----------------------------------------- |
+| Python       | Core programming                          |
+| Pandas       | Data handling                             |
+| NumPy        | Numerical operations                      |
+| Scikit-learn | ML algorithms (TF-IDF, Cosine Similarity) |
+| Logging      | Tracking execution                        |
+
+---
+
+## 🚀 Installation & Setup
+
+### 1️⃣ Clone Repository
+
+```bash
 git clone https://github.com/Hamza-Ali0719/DecodeLabs-Internship.git
-cd DecodeLabs-Internship/Task-3-HamzaAli
-python tech_stack_recommender.py
-2️⃣ Install Dependencies
+cd DecodeLabs-Internship
+cd Task-3-HamzaAli
+```
+
+---
+
+### 2️⃣ Install Dependencies
+
+```bash
 pip install pandas numpy scikit-learn
-3️⃣ Run Project
+```
+
+---
+
+### 3️⃣ Run Project
+
+```bash
 python tech_stack_recommender.py
-🧪 Example Usage
-Input:
+```
+
+---
+
+## 🧪 Example Usage
+
+**Input:**
+
+```text
 Python
 Cloud
 Automation
-Output:
+```
+
+**Output:**
+
+```text
 📌 Cloud Architect
 Match Score: 78.3%
 
@@ -73,20 +125,31 @@ Match Score: 72.1%
 
 📌 Site Reliability Engineer
 Match Score: 65.8%
-📊 Algorithm Explanation
-🔹 TF-IDF
+```
+
+---
+
+## 📊 Algorithm Explanation
+
+### 🔹 TF-IDF
 
 Converts text into weighted vectors:
 
-Rare skills → higher importance
-Common words → lower weight
-🔹 Cosine Similarity
+* Rare skills → higher importance
+* Common words → lower weight
+
+### 🔹 Cosine Similarity
 
 Measures angle between vectors:
 
-1.0 → Perfect match
-0.0 → No similarity
-📈 System Architecture
+* 1.0 → Perfect match
+* 0.0 → No similarity
+
+---
+
+## 📈 System Architecture
+
+```text
 Input (User Skills)
         ↓
 TF-IDF Vectorization
@@ -96,34 +159,58 @@ Similarity Calculation
 Ranking Engine
         ↓
 Top-N Results
-🧪 Testing
-Test Case	Result
-Valid skills input	✅ Passed
-Less than 3 skills	❌ Rejected
-Mixed case input	✅ Handled
-Unknown skills	⚠️ Best-effort match
-🚧 Challenges & Solutions
-Challenge	Solution
-Input validation	Minimum 3 skills enforced
-Case sensitivity	lowercase normalization
-Sparse dataset	TF-IDF optimization
-Logging issues	Fixed file path handling
-🔮 Future Improvements
-🌐 Web UI (Streamlit / Flask)
-🤝 Hybrid recommendation system
-📡 Real job market API integration
-🧠 Skill weighting system
-📊 Dashboard analytics
-📜 Conclusion
+```
 
-This project demonstrates a real-world AI recommendation system using NLP techniques. It simulates how platforms like LinkedIn, Netflix, and Amazon recommend content based on similarity rather than user history.
+---
 
-👨‍💻 Author
+## 🧪 Testing
 
-Hamza Ali
+| Test Case          | Result               |
+| ------------------ | -------------------- |
+| Valid skills input | ✅ Passed             |
+| Less than 3 skills | ❌ Rejected           |
+| Mixed case input   | ✅ Handled            |
+| Unknown skills     | ⚠️ Best-effort match |
+
+---
+
+## 🚧 Challenges & Solutions
+
+| Challenge        | Solution                  |
+| ---------------- | ------------------------- |
+| Input validation | Minimum 3 skills enforced |
+| Case sensitivity | Lowercase normalization   |
+| Sparse dataset   | TF-IDF optimization       |
+| Logging issues   | Fixed file path handling  |
+
+---
+
+## 🔮 Future Improvements
+
+* 🌐 Web UI (Streamlit / Flask)
+* 🤝 Hybrid recommendation system
+* 📡 Real job market API integration
+* 🧠 Skill weighting system
+* 📊 Dashboard analytics
+
+---
+
+## 📜 Conclusion
+
+This project demonstrates a real-world AI recommendation system using NLP techniques. It simulates how platforms like **LinkedIn, Netflix, and Amazon** recommend content based on similarity rather than user history.
+
+---
+
+## 👨‍💻 Author
+
+**Hamza Ali**
 📍 Decode Labs Internship Project
 📅 June 2026
 
-📎 License
+---
+
+## 📎 License
 
 This project is for educational purposes.
+
+
