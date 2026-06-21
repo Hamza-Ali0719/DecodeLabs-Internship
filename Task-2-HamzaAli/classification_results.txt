@@ -1,0 +1,25 @@
+============================================================
+CLASSIFICATION RESULTS
+Accuracy: 0.183
+Baseline (majority guess): 0.208
+============================================================
+
+              precision    recall  f1-score   support
+
+   Cancelled       0.12      0.12      0.12        50
+   Delivered       0.20      0.24      0.22        46
+     Pending       0.16      0.11      0.13        47
+    Returned       0.23      0.28      0.25        50
+     Shipped       0.17      0.17      0.17        47
+
+    accuracy                           0.18       240
+   macro avg       0.18      0.18      0.18       240
+weighted avg       0.18      0.18      0.18       240
+
+
+Confusion Matrix:
+[[ 6 16  3 11 14]
+ [11 11  5  9 10]
+ [11  9  5 13  9]
+ [10 12  9 14  5]
+ [11  6  9 13  8]]

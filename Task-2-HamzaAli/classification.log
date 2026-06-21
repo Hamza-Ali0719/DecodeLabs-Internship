@@ -1,0 +1,990 @@
+2026-06-21 23:19:40,056 - INFO - Classifier initialized with file: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_2_Data_Classification_Using_AI\Dataset_for_Data_Analytics.xlsx
+2026-06-21 23:19:40,056 - INFO - 
+============================================================
+2026-06-21 23:19:40,057 - INFO - STARTING CLASSIFICATION PIPELINE
+2026-06-21 23:19:40,057 - INFO - ============================================================
+2026-06-21 23:19:41,201 - INFO - Data loaded successfully. Shape: (1200, 14)
+2026-06-21 23:19:41,202 - INFO - 
+--------------------------------------------------
+2026-06-21 23:19:41,202 - INFO - TARGET VARIABLE DISTRIBUTION:
+2026-06-21 23:19:41,216 - INFO - 
+OrderStatus
+Cancelled    250
+Returned     247
+Pending      237
+Shipped      235
+Delivered    231
+Name: count, dtype: int64
+2026-06-21 23:19:41,216 - INFO - --------------------------------------------------
+2026-06-21 23:19:41,217 - INFO - Starting preprocessing...
+2026-06-21 23:19:41,219 - INFO - Dropped columns: ['OrderID', 'CustomerID', 'ShippingAddress', 'TrackingNumber', 'Date']
+2026-06-21 23:19:41,226 - INFO - Filled missing CouponCode with 'NoCoupon'.
+2026-06-21 23:19:41,228 - INFO - Features: 8 columns
+2026-06-21 23:19:41,229 - INFO - Target: OrderStatus
+2026-06-21 23:19:41,229 - INFO - Preprocessing complete.
+2026-06-21 23:19:41,229 - INFO - Starting feature encoding...
+2026-06-21 23:19:41,335 - INFO - Target encoded. Classes: ['Cancelled' 'Delivered' 'Pending' 'Returned' 'Shipped']
+2026-06-21 23:19:41,344 - INFO - Encoding complete.
+2026-06-21 23:19:41,345 - INFO - Splitting data into train/test (test_size=0.2)...
+2026-06-21 23:19:41,358 - INFO - Train size: 960 rows
+2026-06-21 23:19:41,359 - INFO - Test size: 240 rows
+2026-06-21 23:19:41,359 - INFO - Scaling numeric features...
+2026-06-21 23:19:41,366 - INFO - Scaling complete.
+2026-06-21 23:19:41,367 - INFO - Training Logistic Regression model...
+2026-06-21 23:19:41,396 - INFO - Model training complete.
+2026-06-21 23:19:41,397 - INFO - Evaluating model performance...
+2026-06-21 23:19:41,440 - INFO - ------------------------------------------------------------
+2026-06-21 23:19:41,513 - INFO - ------------------------------------------------------------
+2026-06-21 23:19:41,514 - INFO - 
+CLASSIFICATION REPORT:
+
+2026-06-21 23:19:41,514 - INFO -               precision    recall  f1-score   support
+
+   Cancelled       0.12      0.12      0.12        50
+   Delivered       0.20      0.24      0.22        46
+     Pending       0.16      0.11      0.13        47
+    Returned       0.23      0.28      0.25        50
+     Shipped       0.17      0.17      0.17        47
+
+    accuracy                           0.18       240
+   macro avg       0.18      0.18      0.18       240
+weighted avg       0.18      0.18      0.18       240
+
+2026-06-21 23:19:41,515 - INFO - 
+CONFUSION MATRIX:
+2026-06-21 23:19:41,516 - INFO - 
+[[ 6 16  3 11 14]
+ [11 11  5  9 10]
+ [11  9  5 13  9]
+ [10 12  9 14  5]
+ [11  6  9 13  8]]
+2026-06-21 23:19:41,524 - WARNING - This typically means the features have no predictive relationship with the target.
+2026-06-21 23:19:41,524 - WARNING - It is NOT a coding error; it indicates the dataset is likely random/synthetic in nature.
+2026-06-21 23:19:41,526 - INFO - Results saved to 'classification_results.txt'
+2026-06-21 23:19:44,861 - INFO - Confusion matrix plot saved to 'confusion_matrix.png'
+2026-06-21 23:19:44,930 - INFO - ------------------------------------------------------------
+2026-06-21 23:19:44,936 - INFO - FEATURE IMPORTANCE ANALYSIS (Coefficients)
+2026-06-21 23:19:44,947 - INFO - ------------------------------------------------------------
+2026-06-21 23:19:44,975 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:19:44,977 - INFO -     + TotalPrice: 0.180
+2026-06-21 23:19:44,977 - INFO -     + Quantity: 0.032
+2026-06-21 23:19:44,978 - INFO -     + CouponCode: 0.019
+2026-06-21 23:19:44,980 - INFO -     + ReferralSource: 0.017
+2026-06-21 23:19:44,981 - INFO -     + PaymentMethod: -0.051
+2026-06-21 23:19:44,984 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:19:44,987 - INFO -     - UnitPrice: -0.103
+2026-06-21 23:19:44,987 - INFO -     - Product: -0.089
+2026-06-21 23:19:44,988 - INFO -     - ItemsInCart: -0.062
+2026-06-21 23:19:44,989 - INFO -     - PaymentMethod: -0.051
+2026-06-21 23:19:44,992 - INFO -     - ReferralSource: 0.017
+2026-06-21 23:19:45,004 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:19:45,004 - INFO -     + PaymentMethod: 0.100
+2026-06-21 23:19:45,005 - INFO -     + Quantity: 0.094
+2026-06-21 23:19:45,006 - INFO -     + UnitPrice: 0.029
+2026-06-21 23:19:45,006 - INFO -     + CouponCode: 0.018
+2026-06-21 23:19:45,007 - INFO -     + ItemsInCart: -0.020
+2026-06-21 23:19:45,007 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:19:45,008 - INFO -     - ReferralSource: -0.173
+2026-06-21 23:19:45,008 - INFO -     - TotalPrice: -0.096
+2026-06-21 23:19:45,011 - INFO -     - Product: -0.039
+2026-06-21 23:19:45,012 - INFO -     - ItemsInCart: -0.020
+2026-06-21 23:19:45,013 - INFO -     - CouponCode: 0.018
+2026-06-21 23:19:45,033 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:19:45,033 - INFO -     + Quantity: 0.129
+2026-06-21 23:19:45,034 - INFO -     + TotalPrice: 0.083
+2026-06-21 23:19:45,034 - INFO -     + ReferralSource: 0.045
+2026-06-21 23:19:45,035 - INFO -     + CouponCode: 0.013
+2026-06-21 23:19:45,035 - INFO -     + Product: -0.000
+2026-06-21 23:19:45,036 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:19:45,036 - INFO -     - PaymentMethod: -0.101
+2026-06-21 23:19:45,037 - INFO -     - ItemsInCart: -0.077
+2026-06-21 23:19:45,037 - INFO -     - UnitPrice: -0.071
+2026-06-21 23:19:45,038 - INFO -     - Product: -0.000
+2026-06-21 23:19:45,042 - INFO -     - CouponCode: 0.013
+2026-06-21 23:19:45,052 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:19:45,053 - INFO -     + ItemsInCart: 0.123
+2026-06-21 23:19:45,053 - INFO -     + Product: 0.097
+2026-06-21 23:19:45,055 - INFO -     + UnitPrice: 0.022
+2026-06-21 23:19:45,056 - INFO -     + ReferralSource: -0.019
+2026-06-21 23:19:45,071 - INFO -     + CouponCode: -0.032
+2026-06-21 23:19:45,071 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:19:45,072 - INFO -     - Quantity: -0.209
+2026-06-21 23:19:45,073 - INFO -     - PaymentMethod: -0.116
+2026-06-21 23:19:45,074 - INFO -     - TotalPrice: -0.040
+2026-06-21 23:19:45,075 - INFO -     - CouponCode: -0.032
+2026-06-21 23:19:45,076 - INFO -     - ReferralSource: -0.019
+2026-06-21 23:19:45,096 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:19:45,096 - INFO -     + PaymentMethod: 0.167
+2026-06-21 23:19:45,097 - INFO -     + ReferralSource: 0.130
+2026-06-21 23:19:45,097 - INFO -     + UnitPrice: 0.124
+2026-06-21 23:19:45,101 - INFO -     + ItemsInCart: 0.036
+2026-06-21 23:19:45,102 - INFO -     + Product: 0.031
+2026-06-21 23:19:45,103 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:19:45,103 - INFO -     - TotalPrice: -0.126
+2026-06-21 23:19:45,104 - INFO -     - Quantity: -0.046
+2026-06-21 23:19:45,104 - INFO -     - CouponCode: -0.018
+2026-06-21 23:19:45,105 - INFO -     - Product: 0.031
+2026-06-21 23:19:45,107 - INFO -     - ItemsInCart: 0.036
+2026-06-21 23:19:45,111 - INFO - ------------------------------------------------------------
+2026-06-21 23:19:45,114 - INFO - 
+============================================================
+2026-06-21 23:19:45,115 - INFO - CLASSIFICATION PIPELINE COMPLETED SUCCESSFULLY.
+2026-06-21 23:19:45,117 - INFO - Check 'classification.log', 'classification_results.txt', and 'confusion_matrix.png'
+2026-06-21 23:19:45,118 - INFO - ============================================================
+2026-06-21 23:20:16,672 - INFO - Classifier initialized with file: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_2_Data_Classification_Using_AI\Dataset_for_Data_Analytics.xlsx
+2026-06-21 23:20:16,673 - INFO - 
+============================================================
+2026-06-21 23:20:16,674 - INFO - STARTING CLASSIFICATION PIPELINE
+2026-06-21 23:20:16,674 - INFO - ============================================================
+2026-06-21 23:20:17,698 - INFO - Data loaded successfully. Shape: (1200, 14)
+2026-06-21 23:20:17,699 - INFO - 
+--------------------------------------------------
+2026-06-21 23:20:17,699 - INFO - TARGET VARIABLE DISTRIBUTION:
+2026-06-21 23:20:17,702 - INFO - 
+OrderStatus
+Cancelled    250
+Returned     247
+Pending      237
+Shipped      235
+Delivered    231
+Name: count, dtype: int64
+2026-06-21 23:20:17,702 - INFO - --------------------------------------------------
+2026-06-21 23:20:17,703 - INFO - Starting preprocessing...
+2026-06-21 23:20:17,704 - INFO - Dropped columns: ['OrderID', 'CustomerID', 'ShippingAddress', 'TrackingNumber', 'Date']
+2026-06-21 23:20:17,706 - INFO - Filled missing CouponCode with 'NoCoupon'.
+2026-06-21 23:20:17,708 - INFO - Features: 8 columns
+2026-06-21 23:20:17,708 - INFO - Target: OrderStatus
+2026-06-21 23:20:17,710 - INFO - Preprocessing complete.
+2026-06-21 23:20:17,710 - INFO - Starting feature encoding...
+2026-06-21 23:20:17,771 - INFO - Target encoded. Classes: ['Cancelled' 'Delivered' 'Pending' 'Returned' 'Shipped']
+2026-06-21 23:20:17,772 - INFO - Encoding complete.
+2026-06-21 23:20:17,772 - INFO - Splitting data into train/test (test_size=0.2)...
+2026-06-21 23:20:17,777 - INFO - Train size: 960 rows
+2026-06-21 23:20:17,777 - INFO - Test size: 240 rows
+2026-06-21 23:20:17,778 - INFO - Scaling numeric features...
+2026-06-21 23:20:17,793 - INFO - Scaling complete.
+2026-06-21 23:20:17,793 - INFO - Training Logistic Regression model...
+2026-06-21 23:20:17,819 - INFO - Model training complete.
+2026-06-21 23:20:17,819 - INFO - Evaluating model performance...
+2026-06-21 23:20:17,865 - INFO - ------------------------------------------------------------
+2026-06-21 23:20:17,875 - INFO - ------------------------------------------------------------
+2026-06-21 23:20:17,876 - INFO - 
+CLASSIFICATION REPORT:
+
+2026-06-21 23:20:17,876 - INFO -               precision    recall  f1-score   support
+
+   Cancelled       0.12      0.12      0.12        50
+   Delivered       0.20      0.24      0.22        46
+     Pending       0.16      0.11      0.13        47
+    Returned       0.23      0.28      0.25        50
+     Shipped       0.17      0.17      0.17        47
+
+    accuracy                           0.18       240
+   macro avg       0.18      0.18      0.18       240
+weighted avg       0.18      0.18      0.18       240
+
+2026-06-21 23:20:17,876 - INFO - 
+CONFUSION MATRIX:
+2026-06-21 23:20:17,879 - INFO - 
+[[ 6 16  3 11 14]
+ [11 11  5  9 10]
+ [11  9  5 13  9]
+ [10 12  9 14  5]
+ [11  6  9 13  8]]
+2026-06-21 23:20:17,885 - WARNING - This typically means the features have no predictive relationship with the target.
+2026-06-21 23:20:17,885 - WARNING - It is NOT a coding error; it indicates the dataset is likely random/synthetic in nature.
+2026-06-21 23:20:17,888 - INFO - Results saved to 'classification_results.txt'
+2026-06-21 23:20:19,268 - INFO - Confusion matrix plot saved to 'confusion_matrix.png'
+2026-06-21 23:20:19,318 - INFO - ------------------------------------------------------------
+2026-06-21 23:20:19,361 - INFO - FEATURE IMPORTANCE ANALYSIS (Coefficients)
+2026-06-21 23:20:19,363 - INFO - ------------------------------------------------------------
+2026-06-21 23:20:19,377 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:20:19,377 - INFO -     + TotalPrice: 0.180
+2026-06-21 23:20:19,378 - INFO -     + Quantity: 0.032
+2026-06-21 23:20:19,378 - INFO -     + CouponCode: 0.019
+2026-06-21 23:20:19,378 - INFO -     + ReferralSource: 0.017
+2026-06-21 23:20:19,379 - INFO -     + PaymentMethod: -0.051
+2026-06-21 23:20:19,383 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:20:19,383 - INFO -     - UnitPrice: -0.103
+2026-06-21 23:20:19,384 - INFO -     - Product: -0.089
+2026-06-21 23:20:19,384 - INFO -     - ItemsInCart: -0.062
+2026-06-21 23:20:19,385 - INFO -     - PaymentMethod: -0.051
+2026-06-21 23:20:19,386 - INFO -     - ReferralSource: 0.017
+2026-06-21 23:20:19,395 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:20:19,396 - INFO -     + PaymentMethod: 0.100
+2026-06-21 23:20:19,396 - INFO -     + Quantity: 0.094
+2026-06-21 23:20:19,397 - INFO -     + UnitPrice: 0.029
+2026-06-21 23:20:19,398 - INFO -     + CouponCode: 0.018
+2026-06-21 23:20:19,399 - INFO -     + ItemsInCart: -0.020
+2026-06-21 23:20:19,399 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:20:19,400 - INFO -     - ReferralSource: -0.173
+2026-06-21 23:20:19,400 - INFO -     - TotalPrice: -0.096
+2026-06-21 23:20:19,401 - INFO -     - Product: -0.039
+2026-06-21 23:20:19,401 - INFO -     - ItemsInCart: -0.020
+2026-06-21 23:20:19,402 - INFO -     - CouponCode: 0.018
+2026-06-21 23:20:19,406 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:20:19,406 - INFO -     + Quantity: 0.129
+2026-06-21 23:20:19,407 - INFO -     + TotalPrice: 0.083
+2026-06-21 23:20:19,407 - INFO -     + ReferralSource: 0.045
+2026-06-21 23:20:19,407 - INFO -     + CouponCode: 0.013
+2026-06-21 23:20:19,408 - INFO -     + Product: -0.000
+2026-06-21 23:20:19,408 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:20:19,408 - INFO -     - PaymentMethod: -0.101
+2026-06-21 23:20:19,409 - INFO -     - ItemsInCart: -0.077
+2026-06-21 23:20:19,409 - INFO -     - UnitPrice: -0.071
+2026-06-21 23:20:19,411 - INFO -     - Product: -0.000
+2026-06-21 23:20:19,413 - INFO -     - CouponCode: 0.013
+2026-06-21 23:20:19,418 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:20:19,419 - INFO -     + ItemsInCart: 0.123
+2026-06-21 23:20:19,420 - INFO -     + Product: 0.097
+2026-06-21 23:20:19,420 - INFO -     + UnitPrice: 0.022
+2026-06-21 23:20:19,421 - INFO -     + ReferralSource: -0.019
+2026-06-21 23:20:19,421 - INFO -     + CouponCode: -0.032
+2026-06-21 23:20:19,421 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:20:19,422 - INFO -     - Quantity: -0.209
+2026-06-21 23:20:19,422 - INFO -     - PaymentMethod: -0.116
+2026-06-21 23:20:19,423 - INFO -     - TotalPrice: -0.040
+2026-06-21 23:20:19,423 - INFO -     - CouponCode: -0.032
+2026-06-21 23:20:19,423 - INFO -     - ReferralSource: -0.019
+2026-06-21 23:20:19,438 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:20:19,438 - INFO -     + PaymentMethod: 0.167
+2026-06-21 23:20:19,439 - INFO -     + ReferralSource: 0.130
+2026-06-21 23:20:19,440 - INFO -     + UnitPrice: 0.124
+2026-06-21 23:20:19,440 - INFO -     + ItemsInCart: 0.036
+2026-06-21 23:20:19,441 - INFO -     + Product: 0.031
+2026-06-21 23:20:19,442 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:20:19,443 - INFO -     - TotalPrice: -0.126
+2026-06-21 23:20:19,444 - INFO -     - Quantity: -0.046
+2026-06-21 23:20:19,444 - INFO -     - CouponCode: -0.018
+2026-06-21 23:20:19,445 - INFO -     - Product: 0.031
+2026-06-21 23:20:19,446 - INFO -     - ItemsInCart: 0.036
+2026-06-21 23:20:19,459 - INFO - ------------------------------------------------------------
+2026-06-21 23:20:19,460 - INFO - 
+============================================================
+2026-06-21 23:20:19,460 - INFO - CLASSIFICATION PIPELINE COMPLETED SUCCESSFULLY.
+2026-06-21 23:20:19,461 - INFO - Check 'classification.log', 'classification_results.txt', and 'confusion_matrix.png'
+2026-06-21 23:20:19,462 - INFO - ============================================================
+2026-06-21 23:23:08,367 - INFO - Classifier initialized with file: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_2_Data_Classification_Using_AI\Dataset_for_Data_Analytics.xlsx
+2026-06-21 23:23:08,367 - INFO - 
+============================================================
+2026-06-21 23:23:08,367 - INFO - STARTING CLASSIFICATION PIPELINE
+2026-06-21 23:23:08,368 - INFO - ============================================================
+2026-06-21 23:23:09,078 - INFO - Data loaded successfully. Shape: (1200, 14)
+2026-06-21 23:23:09,079 - INFO - 
+--------------------------------------------------
+2026-06-21 23:23:09,079 - INFO - TARGET VARIABLE DISTRIBUTION:
+2026-06-21 23:23:09,082 - INFO - 
+OrderStatus
+Cancelled    250
+Returned     247
+Pending      237
+Shipped      235
+Delivered    231
+Name: count, dtype: int64
+2026-06-21 23:23:09,082 - INFO - --------------------------------------------------
+2026-06-21 23:23:09,083 - INFO - Starting preprocessing...
+2026-06-21 23:23:09,084 - INFO - Dropped columns: ['OrderID', 'CustomerID', 'ShippingAddress', 'TrackingNumber', 'Date']
+2026-06-21 23:23:09,086 - INFO - Filled missing CouponCode with 'NoCoupon'.
+2026-06-21 23:23:09,087 - INFO - Features: 8 columns
+2026-06-21 23:23:09,088 - INFO - Target: OrderStatus
+2026-06-21 23:23:09,088 - INFO - Preprocessing complete.
+2026-06-21 23:23:09,088 - INFO - Starting feature encoding...
+2026-06-21 23:23:09,150 - INFO - Target encoded. Classes: ['Cancelled' 'Delivered' 'Pending' 'Returned' 'Shipped']
+2026-06-21 23:23:09,150 - INFO - Encoding complete.
+2026-06-21 23:23:09,150 - INFO - Splitting data into train/test (test_size=0.2)...
+2026-06-21 23:23:09,159 - INFO - Train size: 960 rows
+2026-06-21 23:23:09,159 - INFO - Test size: 240 rows
+2026-06-21 23:23:09,159 - INFO - Scaling numeric features...
+2026-06-21 23:23:09,166 - INFO - Scaling complete.
+2026-06-21 23:23:09,167 - INFO - Training Logistic Regression model...
+2026-06-21 23:23:09,192 - INFO - Model training complete.
+2026-06-21 23:23:09,192 - INFO - Evaluating model performance...
+2026-06-21 23:23:09,243 - INFO - ------------------------------------------------------------
+2026-06-21 23:23:09,243 - INFO -  MODEL ACCURACY: 0.183 (18.3%)
+2026-06-21 23:23:09,243 - INFO -  BASELINE ACCURACY (Guess Majority Class): 0.208 (20.8%)
+2026-06-21 23:23:09,244 - INFO - ------------------------------------------------------------
+2026-06-21 23:23:09,244 - INFO - 
+CLASSIFICATION REPORT:
+
+2026-06-21 23:23:09,244 - INFO -               precision    recall  f1-score   support
+
+   Cancelled       0.12      0.12      0.12        50
+   Delivered       0.20      0.24      0.22        46
+     Pending       0.16      0.11      0.13        47
+    Returned       0.23      0.28      0.25        50
+     Shipped       0.17      0.17      0.17        47
+
+    accuracy                           0.18       240
+   macro avg       0.18      0.18      0.18       240
+weighted avg       0.18      0.18      0.18       240
+
+2026-06-21 23:23:09,245 - INFO - 
+CONFUSION MATRIX:
+2026-06-21 23:23:09,245 - INFO - 
+[[ 6 16  3 11 14]
+ [11 11  5  9 10]
+ [11  9  5 13  9]
+ [10 12  9 14  5]
+ [11  6  9 13  8]]
+2026-06-21 23:23:09,251 - WARNING - This typically means the features have no predictive relationship with the target.
+2026-06-21 23:23:09,252 - WARNING - It is NOT a coding error; it indicates the dataset is likely random/synthetic in nature.
+2026-06-21 23:23:09,254 - INFO - Results saved to 'classification_results.txt'
+2026-06-21 23:23:10,747 - INFO - Confusion matrix plot saved to 'confusion_matrix.png'
+2026-06-21 23:23:10,798 - INFO - ------------------------------------------------------------
+2026-06-21 23:23:10,810 - INFO - FEATURE IMPORTANCE ANALYSIS (Coefficients)
+2026-06-21 23:23:10,811 - INFO - ------------------------------------------------------------
+2026-06-21 23:23:10,819 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:23:10,820 - INFO -     + TotalPrice: 0.180
+2026-06-21 23:23:10,820 - INFO -     + Quantity: 0.032
+2026-06-21 23:23:10,821 - INFO -     + CouponCode: 0.019
+2026-06-21 23:23:10,821 - INFO -     + ReferralSource: 0.017
+2026-06-21 23:23:10,825 - INFO -     + PaymentMethod: -0.051
+2026-06-21 23:23:10,827 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:23:10,829 - INFO -     - UnitPrice: -0.103
+2026-06-21 23:23:10,830 - INFO -     - Product: -0.089
+2026-06-21 23:23:10,832 - INFO -     - ItemsInCart: -0.062
+2026-06-21 23:23:10,833 - INFO -     - PaymentMethod: -0.051
+2026-06-21 23:23:10,837 - INFO -     - ReferralSource: 0.017
+2026-06-21 23:23:10,846 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:23:10,846 - INFO -     + PaymentMethod: 0.100
+2026-06-21 23:23:10,847 - INFO -     + Quantity: 0.094
+2026-06-21 23:23:10,848 - INFO -     + UnitPrice: 0.029
+2026-06-21 23:23:10,848 - INFO -     + CouponCode: 0.018
+2026-06-21 23:23:10,849 - INFO -     + ItemsInCart: -0.020
+2026-06-21 23:23:10,849 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:23:10,850 - INFO -     - ReferralSource: -0.173
+2026-06-21 23:23:10,850 - INFO -     - TotalPrice: -0.096
+2026-06-21 23:23:10,851 - INFO -     - Product: -0.039
+2026-06-21 23:23:10,851 - INFO -     - ItemsInCart: -0.020
+2026-06-21 23:23:10,851 - INFO -     - CouponCode: 0.018
+2026-06-21 23:23:10,862 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:23:10,862 - INFO -     + Quantity: 0.129
+2026-06-21 23:23:10,863 - INFO -     + TotalPrice: 0.083
+2026-06-21 23:23:10,863 - INFO -     + ReferralSource: 0.045
+2026-06-21 23:23:10,863 - INFO -     + CouponCode: 0.013
+2026-06-21 23:23:10,864 - INFO -     + Product: -0.000
+2026-06-21 23:23:10,864 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:23:10,865 - INFO -     - PaymentMethod: -0.101
+2026-06-21 23:23:10,865 - INFO -     - ItemsInCart: -0.077
+2026-06-21 23:23:10,868 - INFO -     - UnitPrice: -0.071
+2026-06-21 23:23:10,868 - INFO -     - Product: -0.000
+2026-06-21 23:23:10,868 - INFO -     - CouponCode: 0.013
+2026-06-21 23:23:10,875 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:23:10,875 - INFO -     + ItemsInCart: 0.123
+2026-06-21 23:23:10,876 - INFO -     + Product: 0.097
+2026-06-21 23:23:10,876 - INFO -     + UnitPrice: 0.022
+2026-06-21 23:23:10,877 - INFO -     + ReferralSource: -0.019
+2026-06-21 23:23:10,877 - INFO -     + CouponCode: -0.032
+2026-06-21 23:23:10,877 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:23:10,878 - INFO -     - Quantity: -0.209
+2026-06-21 23:23:10,878 - INFO -     - PaymentMethod: -0.116
+2026-06-21 23:23:10,879 - INFO -     - TotalPrice: -0.040
+2026-06-21 23:23:10,879 - INFO -     - CouponCode: -0.032
+2026-06-21 23:23:10,880 - INFO -     - ReferralSource: -0.019
+2026-06-21 23:23:10,884 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:23:10,885 - INFO -     + PaymentMethod: 0.167
+2026-06-21 23:23:10,885 - INFO -     + ReferralSource: 0.130
+2026-06-21 23:23:10,885 - INFO -     + UnitPrice: 0.124
+2026-06-21 23:23:10,886 - INFO -     + ItemsInCart: 0.036
+2026-06-21 23:23:10,886 - INFO -     + Product: 0.031
+2026-06-21 23:23:10,887 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:23:10,888 - INFO -     - TotalPrice: -0.126
+2026-06-21 23:23:10,890 - INFO -     - Quantity: -0.046
+2026-06-21 23:23:10,891 - INFO -     - CouponCode: -0.018
+2026-06-21 23:23:10,892 - INFO -     - Product: 0.031
+2026-06-21 23:23:10,892 - INFO -     - ItemsInCart: 0.036
+2026-06-21 23:23:10,893 - INFO - ------------------------------------------------------------
+2026-06-21 23:23:10,893 - INFO - 
+============================================================
+2026-06-21 23:23:10,893 - INFO - CLASSIFICATION PIPELINE COMPLETED SUCCESSFULLY.
+2026-06-21 23:23:10,894 - INFO - Check 'classification.log', 'classification_results.txt', and 'confusion_matrix.png'
+2026-06-21 23:23:10,894 - INFO - ============================================================
+2026-06-21 23:25:28,396 - INFO - Classifier initialized with file: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_2_Data_Classification_Using_AI\Dataset_for_Data_Analytics.xlsx
+2026-06-21 23:25:28,397 - INFO - 
+============================================================
+2026-06-21 23:25:28,397 - INFO - STARTING CLASSIFICATION PIPELINE
+2026-06-21 23:25:28,397 - INFO - ============================================================
+2026-06-21 23:25:29,169 - INFO - Data loaded successfully. Shape: (1200, 14)
+2026-06-21 23:25:29,169 - INFO - 
+--------------------------------------------------
+2026-06-21 23:25:29,169 - INFO - TARGET VARIABLE DISTRIBUTION:
+2026-06-21 23:25:29,173 - INFO - 
+OrderStatus
+Cancelled    250
+Returned     247
+Pending      237
+Shipped      235
+Delivered    231
+Name: count, dtype: int64
+2026-06-21 23:25:29,174 - INFO - --------------------------------------------------
+2026-06-21 23:25:29,174 - INFO - Starting preprocessing...
+2026-06-21 23:25:29,176 - INFO - Dropped columns: ['OrderID', 'CustomerID', 'ShippingAddress', 'TrackingNumber', 'Date']
+2026-06-21 23:25:29,179 - INFO - Filled missing CouponCode with 'NoCoupon'.
+2026-06-21 23:25:29,184 - INFO - Features: 8 columns
+2026-06-21 23:25:29,185 - INFO - Target: OrderStatus
+2026-06-21 23:25:29,185 - INFO - Preprocessing complete.
+2026-06-21 23:25:29,185 - INFO - Starting feature encoding...
+2026-06-21 23:25:29,257 - INFO - Target encoded. Classes: ['Cancelled' 'Delivered' 'Pending' 'Returned' 'Shipped']
+2026-06-21 23:25:29,257 - INFO - Encoding complete.
+2026-06-21 23:25:29,258 - INFO - Splitting data into train/test (test_size=0.2)...
+2026-06-21 23:25:29,263 - INFO - Train size: 960 rows
+2026-06-21 23:25:29,263 - INFO - Test size: 240 rows
+2026-06-21 23:25:29,263 - INFO - Scaling numeric features...
+2026-06-21 23:25:29,272 - INFO - Scaling complete.
+2026-06-21 23:25:29,272 - INFO - Training Logistic Regression model...
+2026-06-21 23:25:29,297 - INFO - Model training complete.
+2026-06-21 23:25:29,297 - INFO - Evaluating model performance...
+2026-06-21 23:25:29,334 - INFO - ------------------------------------------------------------
+2026-06-21 23:25:29,334 - INFO -  MODEL ACCURACY: 0.183 (18.3%)
+2026-06-21 23:25:29,335 - INFO -  BASELINE ACCURACY (Guess Majority Class): 0.208 (20.8%)
+2026-06-21 23:25:29,335 - INFO - ------------------------------------------------------------
+2026-06-21 23:25:29,335 - INFO - 
+CLASSIFICATION REPORT:
+
+2026-06-21 23:25:29,336 - INFO -               precision    recall  f1-score   support
+
+   Cancelled       0.12      0.12      0.12        50
+   Delivered       0.20      0.24      0.22        46
+     Pending       0.16      0.11      0.13        47
+    Returned       0.23      0.28      0.25        50
+     Shipped       0.17      0.17      0.17        47
+
+    accuracy                           0.18       240
+   macro avg       0.18      0.18      0.18       240
+weighted avg       0.18      0.18      0.18       240
+
+2026-06-21 23:25:29,336 - INFO - 
+CONFUSION MATRIX:
+2026-06-21 23:25:29,337 - INFO - 
+[[ 6 16  3 11 14]
+ [11 11  5  9 10]
+ [11  9  5 13  9]
+ [10 12  9 14  5]
+ [11  6  9 13  8]]
+2026-06-21 23:25:29,337 - WARNING -   MODEL UNDERPERFORMS BASELINE.
+2026-06-21 23:25:29,337 - WARNING - This typically means the features have no predictive relationship with the target.
+2026-06-21 23:25:29,338 - WARNING - It is NOT a coding error; it indicates the dataset is likely random/synthetic in nature.
+2026-06-21 23:25:29,339 - INFO - Results saved to 'classification_results.txt'
+2026-06-21 23:25:30,505 - INFO - Confusion matrix plot saved to 'confusion_matrix.png'
+2026-06-21 23:25:30,548 - INFO - ------------------------------------------------------------
+2026-06-21 23:25:30,559 - INFO - FEATURE IMPORTANCE ANALYSIS (Coefficients)
+2026-06-21 23:25:30,560 - INFO - ------------------------------------------------------------
+2026-06-21 23:25:30,561 - INFO - 
+ Class: Cancelled
+2026-06-21 23:25:30,562 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:25:30,564 - INFO -     + TotalPrice: 0.180
+2026-06-21 23:25:30,578 - INFO -     + Quantity: 0.032
+2026-06-21 23:25:30,579 - INFO -     + CouponCode: 0.019
+2026-06-21 23:25:30,580 - INFO -     + ReferralSource: 0.017
+2026-06-21 23:25:30,581 - INFO -     + PaymentMethod: -0.051
+2026-06-21 23:25:30,593 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:25:30,597 - INFO -     - UnitPrice: -0.103
+2026-06-21 23:25:30,598 - INFO -     - Product: -0.089
+2026-06-21 23:25:30,600 - INFO -     - ItemsInCart: -0.062
+2026-06-21 23:25:30,600 - INFO -     - PaymentMethod: -0.051
+2026-06-21 23:25:30,601 - INFO -     - ReferralSource: 0.017
+2026-06-21 23:25:30,606 - INFO - 
+ Class: Delivered
+2026-06-21 23:25:30,609 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:25:30,609 - INFO -     + PaymentMethod: 0.100
+2026-06-21 23:25:30,610 - INFO -     + Quantity: 0.094
+2026-06-21 23:25:30,611 - INFO -     + UnitPrice: 0.029
+2026-06-21 23:25:30,611 - INFO -     + CouponCode: 0.018
+2026-06-21 23:25:30,612 - INFO -     + ItemsInCart: -0.020
+2026-06-21 23:25:30,612 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:25:30,612 - INFO -     - ReferralSource: -0.173
+2026-06-21 23:25:30,613 - INFO -     - TotalPrice: -0.096
+2026-06-21 23:25:30,614 - INFO -     - Product: -0.039
+2026-06-21 23:25:30,615 - INFO -     - ItemsInCart: -0.020
+2026-06-21 23:25:30,615 - INFO -     - CouponCode: 0.018
+2026-06-21 23:25:30,621 - INFO - 
+ Class: Pending
+2026-06-21 23:25:30,622 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:25:30,622 - INFO -     + Quantity: 0.129
+2026-06-21 23:25:30,623 - INFO -     + TotalPrice: 0.083
+2026-06-21 23:25:30,625 - INFO -     + ReferralSource: 0.045
+2026-06-21 23:25:30,626 - INFO -     + CouponCode: 0.013
+2026-06-21 23:25:30,626 - INFO -     + Product: -0.000
+2026-06-21 23:25:30,626 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:25:30,627 - INFO -     - PaymentMethod: -0.101
+2026-06-21 23:25:30,627 - INFO -     - ItemsInCart: -0.077
+2026-06-21 23:25:30,628 - INFO -     - UnitPrice: -0.071
+2026-06-21 23:25:30,628 - INFO -     - Product: -0.000
+2026-06-21 23:25:30,629 - INFO -     - CouponCode: 0.013
+2026-06-21 23:25:30,629 - INFO - 
+ Class: Returned
+2026-06-21 23:25:30,629 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:25:30,630 - INFO -     + ItemsInCart: 0.123
+2026-06-21 23:25:30,630 - INFO -     + Product: 0.097
+2026-06-21 23:25:30,631 - INFO -     + UnitPrice: 0.022
+2026-06-21 23:25:30,631 - INFO -     + ReferralSource: -0.019
+2026-06-21 23:25:30,635 - INFO -     + CouponCode: -0.032
+2026-06-21 23:25:30,636 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:25:30,636 - INFO -     - Quantity: -0.209
+2026-06-21 23:25:30,636 - INFO -     - PaymentMethod: -0.116
+2026-06-21 23:25:30,637 - INFO -     - TotalPrice: -0.040
+2026-06-21 23:25:30,637 - INFO -     - CouponCode: -0.032
+2026-06-21 23:25:30,638 - INFO -     - ReferralSource: -0.019
+2026-06-21 23:25:30,638 - INFO - 
+ Class: Shipped
+2026-06-21 23:25:30,639 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:25:30,639 - INFO -     + PaymentMethod: 0.167
+2026-06-21 23:25:30,639 - INFO -     + ReferralSource: 0.130
+2026-06-21 23:25:30,640 - INFO -     + UnitPrice: 0.124
+2026-06-21 23:25:30,640 - INFO -     + ItemsInCart: 0.036
+2026-06-21 23:25:30,640 - INFO -     + Product: 0.031
+2026-06-21 23:25:30,641 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:25:30,641 - INFO -     - TotalPrice: -0.126
+2026-06-21 23:25:30,642 - INFO -     - Quantity: -0.046
+2026-06-21 23:25:30,642 - INFO -     - CouponCode: -0.018
+2026-06-21 23:25:30,642 - INFO -     - Product: 0.031
+2026-06-21 23:25:30,643 - INFO -     - ItemsInCart: 0.036
+2026-06-21 23:25:30,643 - INFO - ------------------------------------------------------------
+2026-06-21 23:25:30,644 - INFO - 
+============================================================
+2026-06-21 23:25:30,645 - INFO - CLASSIFICATION PIPELINE COMPLETED SUCCESSFULLY.
+2026-06-21 23:25:30,645 - INFO - Check 'classification.log', 'classification_results.txt', and 'confusion_matrix.png'
+2026-06-21 23:25:30,646 - INFO - ============================================================
+2026-06-21 23:26:09,843 - INFO - Classifier initialized with file: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_2_Data_Classification_Using_AI\Dataset_for_Data_Analytics.xlsx
+2026-06-21 23:26:09,843 - INFO - 
+============================================================
+2026-06-21 23:26:09,844 - INFO - STARTING CLASSIFICATION PIPELINE
+2026-06-21 23:26:09,844 - INFO - ============================================================
+2026-06-21 23:26:10,908 - INFO - Data loaded successfully. Shape: (1200, 14)
+2026-06-21 23:26:10,909 - INFO - 
+--------------------------------------------------
+2026-06-21 23:26:10,909 - INFO - TARGET VARIABLE DISTRIBUTION:
+2026-06-21 23:26:10,913 - INFO - 
+OrderStatus
+Cancelled    250
+Returned     247
+Pending      237
+Shipped      235
+Delivered    231
+Name: count, dtype: int64
+2026-06-21 23:26:10,914 - INFO - --------------------------------------------------
+2026-06-21 23:26:10,914 - INFO - Starting preprocessing...
+2026-06-21 23:26:10,917 - INFO - Dropped columns: ['OrderID', 'CustomerID', 'ShippingAddress', 'TrackingNumber', 'Date']
+2026-06-21 23:26:10,919 - INFO - Filled missing CouponCode with 'NoCoupon'.
+2026-06-21 23:26:10,923 - INFO - Features: 8 columns
+2026-06-21 23:26:10,926 - INFO - Target: OrderStatus
+2026-06-21 23:26:10,928 - INFO - Preprocessing complete.
+2026-06-21 23:26:10,929 - INFO - Starting feature encoding...
+2026-06-21 23:26:11,006 - INFO - Target encoded. Classes: ['Cancelled' 'Delivered' 'Pending' 'Returned' 'Shipped']
+2026-06-21 23:26:11,007 - INFO - Encoding complete.
+2026-06-21 23:26:11,008 - INFO - Splitting data into train/test (test_size=0.2)...
+2026-06-21 23:26:11,016 - INFO - Train size: 960 rows
+2026-06-21 23:26:11,016 - INFO - Test size: 240 rows
+2026-06-21 23:26:11,017 - INFO - Scaling numeric features...
+2026-06-21 23:26:11,035 - INFO - Scaling complete.
+2026-06-21 23:26:11,035 - INFO - Training Logistic Regression model...
+2026-06-21 23:26:11,072 - INFO - Model training complete.
+2026-06-21 23:26:11,073 - INFO - Evaluating model performance...
+2026-06-21 23:26:11,141 - INFO - ------------------------------------------------------------
+2026-06-21 23:26:11,141 - INFO -  MODEL ACCURACY: 0.183 (18.3%)
+2026-06-21 23:26:11,142 - INFO -  BASELINE ACCURACY (Guess Majority Class): 0.208 (20.8%)
+2026-06-21 23:26:11,142 - INFO - ------------------------------------------------------------
+2026-06-21 23:26:11,142 - INFO - 
+CLASSIFICATION REPORT:
+
+2026-06-21 23:26:11,143 - INFO -               precision    recall  f1-score   support
+
+   Cancelled       0.12      0.12      0.12        50
+   Delivered       0.20      0.24      0.22        46
+     Pending       0.16      0.11      0.13        47
+    Returned       0.23      0.28      0.25        50
+     Shipped       0.17      0.17      0.17        47
+
+    accuracy                           0.18       240
+   macro avg       0.18      0.18      0.18       240
+weighted avg       0.18      0.18      0.18       240
+
+2026-06-21 23:26:11,143 - INFO - 
+CONFUSION MATRIX:
+2026-06-21 23:26:11,144 - INFO - 
+[[ 6 16  3 11 14]
+ [11 11  5  9 10]
+ [11  9  5 13  9]
+ [10 12  9 14  5]
+ [11  6  9 13  8]]
+2026-06-21 23:26:11,144 - WARNING -   MODEL UNDERPERFORMS BASELINE.
+2026-06-21 23:26:11,145 - WARNING - This typically means the features have no predictive relationship with the target.
+2026-06-21 23:26:11,145 - WARNING - It is NOT a coding error; it indicates the dataset is likely random/synthetic in nature.
+2026-06-21 23:26:11,151 - INFO - Results saved to 'classification_results.txt'
+2026-06-21 23:26:12,841 - INFO - Confusion matrix plot saved to 'confusion_matrix.png'
+2026-06-21 23:26:12,908 - INFO - ------------------------------------------------------------
+2026-06-21 23:26:12,912 - INFO - FEATURE IMPORTANCE ANALYSIS (Coefficients)
+2026-06-21 23:26:12,913 - INFO - ------------------------------------------------------------
+2026-06-21 23:26:12,920 - INFO - 
+ Class: Cancelled
+2026-06-21 23:26:12,922 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:26:12,923 - INFO -     + TotalPrice: 0.180
+2026-06-21 23:26:12,923 - INFO -     + Quantity: 0.032
+2026-06-21 23:26:12,924 - INFO -     + CouponCode: 0.019
+2026-06-21 23:26:12,924 - INFO -     + ReferralSource: 0.017
+2026-06-21 23:26:12,925 - INFO -     + PaymentMethod: -0.051
+2026-06-21 23:26:12,926 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:26:12,926 - INFO -     - UnitPrice: -0.103
+2026-06-21 23:26:12,928 - INFO -     - Product: -0.089
+2026-06-21 23:26:12,929 - INFO -     - ItemsInCart: -0.062
+2026-06-21 23:26:12,929 - INFO -     - PaymentMethod: -0.051
+2026-06-21 23:26:12,931 - INFO -     - ReferralSource: 0.017
+2026-06-21 23:26:12,937 - INFO - 
+ Class: Delivered
+2026-06-21 23:26:12,938 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:26:12,938 - INFO -     + PaymentMethod: 0.100
+2026-06-21 23:26:12,942 - INFO -     + Quantity: 0.094
+2026-06-21 23:26:12,943 - INFO -     + UnitPrice: 0.029
+2026-06-21 23:26:12,944 - INFO -     + CouponCode: 0.018
+2026-06-21 23:26:12,944 - INFO -     + ItemsInCart: -0.020
+2026-06-21 23:26:12,946 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:26:12,946 - INFO -     - ReferralSource: -0.173
+2026-06-21 23:26:12,948 - INFO -     - TotalPrice: -0.096
+2026-06-21 23:26:12,949 - INFO -     - Product: -0.039
+2026-06-21 23:26:12,949 - INFO -     - ItemsInCart: -0.020
+2026-06-21 23:26:12,951 - INFO -     - CouponCode: 0.018
+2026-06-21 23:26:12,952 - INFO - 
+ Class: Pending
+2026-06-21 23:26:12,953 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:26:12,953 - INFO -     + Quantity: 0.129
+2026-06-21 23:26:12,954 - INFO -     + TotalPrice: 0.083
+2026-06-21 23:26:12,954 - INFO -     + ReferralSource: 0.045
+2026-06-21 23:26:12,955 - INFO -     + CouponCode: 0.013
+2026-06-21 23:26:12,955 - INFO -     + Product: -0.000
+2026-06-21 23:26:12,956 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:26:12,957 - INFO -     - PaymentMethod: -0.101
+2026-06-21 23:26:12,957 - INFO -     - ItemsInCart: -0.077
+2026-06-21 23:26:12,958 - INFO -     - UnitPrice: -0.071
+2026-06-21 23:26:12,958 - INFO -     - Product: -0.000
+2026-06-21 23:26:12,959 - INFO -     - CouponCode: 0.013
+2026-06-21 23:26:12,961 - INFO - 
+ Class: Returned
+2026-06-21 23:26:12,966 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:26:12,966 - INFO -     + ItemsInCart: 0.123
+2026-06-21 23:26:12,967 - INFO -     + Product: 0.097
+2026-06-21 23:26:12,967 - INFO -     + UnitPrice: 0.022
+2026-06-21 23:26:12,968 - INFO -     + ReferralSource: -0.019
+2026-06-21 23:26:12,968 - INFO -     + CouponCode: -0.032
+2026-06-21 23:26:12,969 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:26:12,969 - INFO -     - Quantity: -0.209
+2026-06-21 23:26:12,970 - INFO -     - PaymentMethod: -0.116
+2026-06-21 23:26:12,971 - INFO -     - TotalPrice: -0.040
+2026-06-21 23:26:12,972 - INFO -     - CouponCode: -0.032
+2026-06-21 23:26:12,972 - INFO -     - ReferralSource: -0.019
+2026-06-21 23:26:12,973 - INFO - 
+ Class: Shipped
+2026-06-21 23:26:12,974 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:26:12,974 - INFO -     + PaymentMethod: 0.167
+2026-06-21 23:26:12,975 - INFO -     + ReferralSource: 0.130
+2026-06-21 23:26:12,975 - INFO -     + UnitPrice: 0.124
+2026-06-21 23:26:12,978 - INFO -     + ItemsInCart: 0.036
+2026-06-21 23:26:12,980 - INFO -     + Product: 0.031
+2026-06-21 23:26:12,983 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:26:12,985 - INFO -     - TotalPrice: -0.126
+2026-06-21 23:26:12,985 - INFO -     - Quantity: -0.046
+2026-06-21 23:26:12,987 - INFO -     - CouponCode: -0.018
+2026-06-21 23:26:12,987 - INFO -     - Product: 0.031
+2026-06-21 23:26:12,988 - INFO -     - ItemsInCart: 0.036
+2026-06-21 23:26:12,989 - INFO - ------------------------------------------------------------
+2026-06-21 23:26:12,989 - INFO - 
+============================================================
+2026-06-21 23:26:12,990 - INFO - CLASSIFICATION PIPELINE COMPLETED SUCCESSFULLY.
+2026-06-21 23:26:12,991 - INFO - Check 'classification.log', 'classification_results.txt', and 'confusion_matrix.png'
+2026-06-21 23:26:12,995 - INFO - ============================================================
+2026-06-21 23:37:12,093 - INFO - Classifier initialized with file: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_2_Data_Classification_Using_AI\Dataset_for_Data_Analytics.xlsx
+2026-06-21 23:37:12,094 - INFO - 
+============================================================
+2026-06-21 23:37:12,094 - INFO - STARTING CLASSIFICATION PIPELINE
+2026-06-21 23:37:12,095 - INFO - ============================================================
+2026-06-21 23:37:53,249 - INFO - Classifier initialized with file: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_2_Data_Classification_Using_AI\Dataset_for_Data_Analytics.xlsx
+2026-06-21 23:37:53,250 - INFO - 
+============================================================
+2026-06-21 23:37:53,250 - INFO - STARTING CLASSIFICATION PIPELINE
+2026-06-21 23:37:53,251 - INFO - ============================================================
+2026-06-21 23:37:53,985 - INFO - Data loaded successfully. Shape: (1200, 14)
+2026-06-21 23:37:53,985 - INFO - 
+--------------------------------------------------
+2026-06-21 23:37:53,985 - INFO - TARGET VARIABLE DISTRIBUTION:
+2026-06-21 23:37:54,001 - INFO - 
+OrderStatus
+Cancelled    250
+Returned     247
+Pending      237
+Shipped      235
+Delivered    231
+Name: count, dtype: int64
+2026-06-21 23:37:54,001 - INFO - --------------------------------------------------
+2026-06-21 23:37:54,001 - INFO - Starting preprocessing...
+2026-06-21 23:37:54,003 - INFO - Dropped columns: ['OrderID', 'CustomerID', 'ShippingAddress', 'TrackingNumber', 'Date']
+2026-06-21 23:37:54,005 - INFO - Filled missing CouponCode with 'NoCoupon'.
+2026-06-21 23:37:54,012 - INFO - Features: 8 columns
+2026-06-21 23:37:54,012 - INFO - Target: OrderStatus
+2026-06-21 23:37:54,013 - INFO - Preprocessing complete.
+2026-06-21 23:37:54,013 - INFO - Starting feature encoding...
+2026-06-21 23:37:54,087 - INFO - Target encoded. Classes: ['Cancelled' 'Delivered' 'Pending' 'Returned' 'Shipped']
+2026-06-21 23:37:54,088 - INFO - Encoding complete.
+2026-06-21 23:37:54,089 - INFO - Splitting data into train/test (test_size=0.2)...
+2026-06-21 23:37:54,097 - INFO - Train size: 960 rows
+2026-06-21 23:37:54,097 - INFO - Test size: 240 rows
+2026-06-21 23:37:54,097 - INFO - Scaling numeric features...
+2026-06-21 23:37:54,115 - INFO - Scaling complete.
+2026-06-21 23:37:54,116 - INFO - Training Logistic Regression model...
+2026-06-21 23:37:54,145 - INFO - Model training complete.
+2026-06-21 23:37:54,146 - INFO - Evaluating model performance...
+2026-06-21 23:37:54,212 - INFO - ------------------------------------------------------------
+2026-06-21 23:37:54,213 - INFO -  MODEL ACCURACY: 0.183 (18.3%)
+2026-06-21 23:37:54,213 - INFO -  BASELINE ACCURACY (Guess Majority Class): 0.208 (20.8%)
+2026-06-21 23:37:54,214 - INFO - ------------------------------------------------------------
+2026-06-21 23:37:54,214 - INFO - 
+CLASSIFICATION REPORT:
+
+2026-06-21 23:37:54,214 - INFO -               precision    recall  f1-score   support
+
+   Cancelled       0.12      0.12      0.12        50
+   Delivered       0.20      0.24      0.22        46
+     Pending       0.16      0.11      0.13        47
+    Returned       0.23      0.28      0.25        50
+     Shipped       0.17      0.17      0.17        47
+
+    accuracy                           0.18       240
+   macro avg       0.18      0.18      0.18       240
+weighted avg       0.18      0.18      0.18       240
+
+2026-06-21 23:37:54,217 - INFO - 
+CONFUSION MATRIX:
+2026-06-21 23:37:54,219 - INFO - 
+[[ 6 16  3 11 14]
+ [11 11  5  9 10]
+ [11  9  5 13  9]
+ [10 12  9 14  5]
+ [11  6  9 13  8]]
+2026-06-21 23:37:54,219 - WARNING -   MODEL UNDERPERFORMS BASELINE.
+2026-06-21 23:37:54,220 - WARNING - This typically means the features have no predictive relationship with the target.
+2026-06-21 23:37:54,220 - WARNING - It is NOT a coding error; it indicates the dataset is likely random/synthetic in nature.
+2026-06-21 23:37:54,222 - INFO - Results saved to 'classification_results.txt'
+2026-06-21 23:37:55,336 - INFO - Confusion matrix plot saved to 'confusion_matrix.png'
+2026-06-21 23:37:55,362 - INFO - ------------------------------------------------------------
+2026-06-21 23:37:55,364 - INFO - FEATURE IMPORTANCE ANALYSIS (Coefficients)
+2026-06-21 23:37:55,374 - INFO - ------------------------------------------------------------
+2026-06-21 23:37:55,375 - INFO - 
+ Class: Cancelled
+2026-06-21 23:37:55,377 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:37:55,378 - INFO -     + TotalPrice: 0.180
+2026-06-21 23:37:55,378 - INFO -     + Quantity: 0.032
+2026-06-21 23:37:55,390 - INFO -     + CouponCode: 0.019
+2026-06-21 23:37:55,391 - INFO -     + ReferralSource: 0.017
+2026-06-21 23:37:55,392 - INFO -     + PaymentMethod: -0.051
+2026-06-21 23:37:55,392 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:37:55,393 - INFO -     - UnitPrice: -0.103
+2026-06-21 23:37:55,395 - INFO -     - Product: -0.089
+2026-06-21 23:37:55,396 - INFO -     - ItemsInCart: -0.062
+2026-06-21 23:37:55,397 - INFO -     - PaymentMethod: -0.051
+2026-06-21 23:37:55,397 - INFO -     - ReferralSource: 0.017
+2026-06-21 23:37:55,401 - INFO - 
+ Class: Delivered
+2026-06-21 23:37:55,404 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:37:55,405 - INFO -     + PaymentMethod: 0.100
+2026-06-21 23:37:55,405 - INFO -     + Quantity: 0.094
+2026-06-21 23:37:55,407 - INFO -     + UnitPrice: 0.029
+2026-06-21 23:37:55,408 - INFO -     + CouponCode: 0.018
+2026-06-21 23:37:55,409 - INFO -     + ItemsInCart: -0.020
+2026-06-21 23:37:55,414 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:37:55,418 - INFO -     - ReferralSource: -0.173
+2026-06-21 23:37:55,419 - INFO -     - TotalPrice: -0.096
+2026-06-21 23:37:55,420 - INFO -     - Product: -0.039
+2026-06-21 23:37:55,421 - INFO -     - ItemsInCart: -0.020
+2026-06-21 23:37:55,422 - INFO -     - CouponCode: 0.018
+2026-06-21 23:37:55,426 - INFO - 
+ Class: Pending
+2026-06-21 23:37:55,427 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:37:55,428 - INFO -     + Quantity: 0.129
+2026-06-21 23:37:55,430 - INFO -     + TotalPrice: 0.083
+2026-06-21 23:37:55,430 - INFO -     + ReferralSource: 0.045
+2026-06-21 23:37:55,434 - INFO -     + CouponCode: 0.013
+2026-06-21 23:37:55,437 - INFO -     + Product: -0.000
+2026-06-21 23:37:55,438 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:37:55,438 - INFO -     - PaymentMethod: -0.101
+2026-06-21 23:37:55,439 - INFO -     - ItemsInCart: -0.077
+2026-06-21 23:37:55,440 - INFO -     - UnitPrice: -0.071
+2026-06-21 23:37:55,440 - INFO -     - Product: -0.000
+2026-06-21 23:37:55,441 - INFO -     - CouponCode: 0.013
+2026-06-21 23:37:55,442 - INFO - 
+ Class: Returned
+2026-06-21 23:37:55,442 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:37:55,443 - INFO -     + ItemsInCart: 0.123
+2026-06-21 23:37:55,443 - INFO -     + Product: 0.097
+2026-06-21 23:37:55,444 - INFO -     + UnitPrice: 0.022
+2026-06-21 23:37:55,444 - INFO -     + ReferralSource: -0.019
+2026-06-21 23:37:55,444 - INFO -     + CouponCode: -0.032
+2026-06-21 23:37:55,445 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:37:55,445 - INFO -     - Quantity: -0.209
+2026-06-21 23:37:55,445 - INFO -     - PaymentMethod: -0.116
+2026-06-21 23:37:55,446 - INFO -     - TotalPrice: -0.040
+2026-06-21 23:37:55,446 - INFO -     - CouponCode: -0.032
+2026-06-21 23:37:55,447 - INFO -     - ReferralSource: -0.019
+2026-06-21 23:37:55,447 - INFO - 
+ Class: Shipped
+2026-06-21 23:37:55,449 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:37:55,450 - INFO -     + PaymentMethod: 0.167
+2026-06-21 23:37:55,451 - INFO -     + ReferralSource: 0.130
+2026-06-21 23:37:55,454 - INFO -     + UnitPrice: 0.124
+2026-06-21 23:37:55,454 - INFO -     + ItemsInCart: 0.036
+2026-06-21 23:37:55,455 - INFO -     + Product: 0.031
+2026-06-21 23:37:55,455 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:37:55,455 - INFO -     - TotalPrice: -0.126
+2026-06-21 23:37:55,456 - INFO -     - Quantity: -0.046
+2026-06-21 23:37:55,456 - INFO -     - CouponCode: -0.018
+2026-06-21 23:37:55,456 - INFO -     - Product: 0.031
+2026-06-21 23:37:55,457 - INFO -     - ItemsInCart: 0.036
+2026-06-21 23:37:55,457 - INFO - ------------------------------------------------------------
+2026-06-21 23:37:55,457 - INFO - 
+============================================================
+2026-06-21 23:37:55,458 - INFO - CLASSIFICATION PIPELINE COMPLETED SUCCESSFULLY.
+2026-06-21 23:37:55,458 - INFO - Check 'classification.log', 'classification_results.txt', and 'confusion_matrix.png'
+2026-06-21 23:37:55,458 - INFO - ============================================================
+2026-06-21 23:52:39,509 - INFO - Classifier initialized with file: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_2_Data_Classification_Using_AI\Dataset_for_Data_Analytics.xlsx
+2026-06-21 23:52:39,510 - INFO - 
+============================================================
+2026-06-21 23:52:39,510 - INFO - STARTING CLASSIFICATION PIPELINE
+2026-06-21 23:52:39,511 - INFO - ============================================================
+2026-06-21 23:52:40,416 - INFO - Data loaded successfully. Shape: (1200, 14)
+2026-06-21 23:52:40,416 - INFO - 
+--------------------------------------------------
+2026-06-21 23:52:40,417 - INFO - TARGET VARIABLE DISTRIBUTION:
+2026-06-21 23:52:40,428 - INFO - 
+OrderStatus
+Cancelled    250
+Returned     247
+Pending      237
+Shipped      235
+Delivered    231
+Name: count, dtype: int64
+2026-06-21 23:52:40,429 - INFO - --------------------------------------------------
+2026-06-21 23:52:40,429 - INFO - Starting preprocessing...
+2026-06-21 23:52:40,434 - INFO - Dropped columns: ['OrderID', 'CustomerID', 'ShippingAddress', 'TrackingNumber', 'Date']
+2026-06-21 23:52:40,436 - INFO - Filled missing CouponCode with 'NoCoupon'.
+2026-06-21 23:52:40,439 - INFO - Features: 8 columns
+2026-06-21 23:52:40,440 - INFO - Target: OrderStatus
+2026-06-21 23:52:40,440 - INFO - Preprocessing complete.
+2026-06-21 23:52:40,448 - INFO - Starting feature encoding...
+2026-06-21 23:52:40,525 - INFO - Target encoded. Classes: ['Cancelled' 'Delivered' 'Pending' 'Returned' 'Shipped']
+2026-06-21 23:52:40,526 - INFO - Encoding complete.
+2026-06-21 23:52:40,526 - INFO - Splitting data into train/test (test_size=0.2)...
+2026-06-21 23:52:40,535 - INFO - Train size: 960 rows
+2026-06-21 23:52:40,535 - INFO - Test size: 240 rows
+2026-06-21 23:52:40,535 - INFO - Scaling numeric features...
+2026-06-21 23:52:40,548 - INFO - Scaling complete.
+2026-06-21 23:52:40,550 - INFO - Training Logistic Regression model...
+2026-06-21 23:52:40,614 - INFO - Model training complete.
+2026-06-21 23:52:40,615 - INFO - Evaluating model performance...
+2026-06-21 23:52:40,677 - INFO - ------------------------------------------------------------
+2026-06-21 23:52:40,677 - INFO -  MODEL ACCURACY: 0.183 (18.3%)
+2026-06-21 23:52:40,678 - INFO -  BASELINE ACCURACY (Guess Majority Class): 0.208 (20.8%)
+2026-06-21 23:52:40,678 - INFO - ------------------------------------------------------------
+2026-06-21 23:52:40,678 - INFO - 
+CLASSIFICATION REPORT:
+
+2026-06-21 23:52:40,679 - INFO -               precision    recall  f1-score   support
+
+   Cancelled       0.12      0.12      0.12        50
+   Delivered       0.20      0.24      0.22        46
+     Pending       0.16      0.11      0.13        47
+    Returned       0.23      0.28      0.25        50
+     Shipped       0.17      0.17      0.17        47
+
+    accuracy                           0.18       240
+   macro avg       0.18      0.18      0.18       240
+weighted avg       0.18      0.18      0.18       240
+
+2026-06-21 23:52:40,680 - INFO - 
+CONFUSION MATRIX:
+2026-06-21 23:52:40,682 - INFO - 
+[[ 6 16  3 11 14]
+ [11 11  5  9 10]
+ [11  9  5 13  9]
+ [10 12  9 14  5]
+ [11  6  9 13  8]]
+2026-06-21 23:52:40,683 - WARNING -   MODEL UNDERPERFORMS BASELINE.
+2026-06-21 23:52:40,684 - WARNING - This typically means the features have no predictive relationship with the target.
+2026-06-21 23:52:40,685 - WARNING - It is NOT a coding error; it indicates the dataset is likely random/synthetic in nature.
+2026-06-21 23:52:40,690 - INFO - Results saved to 'classification_results.txt'
+2026-06-21 23:52:42,058 - INFO - Confusion matrix plot saved to 'confusion_matrix.png'
+2026-06-21 23:52:42,116 - INFO - ------------------------------------------------------------
+2026-06-21 23:52:42,248 - INFO - FEATURE IMPORTANCE ANALYSIS (Coefficients)
+2026-06-21 23:52:42,255 - INFO - ------------------------------------------------------------
+2026-06-21 23:52:42,265 - INFO - 
+ Class: Cancelled
+2026-06-21 23:52:42,266 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:52:42,267 - INFO -     + TotalPrice: 0.180
+2026-06-21 23:52:42,267 - INFO -     + Quantity: 0.032
+2026-06-21 23:52:42,268 - INFO -     + CouponCode: 0.019
+2026-06-21 23:52:42,268 - INFO -     + ReferralSource: 0.017
+2026-06-21 23:52:42,269 - INFO -     + PaymentMethod: -0.051
+2026-06-21 23:52:42,269 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:52:42,270 - INFO -     - UnitPrice: -0.103
+2026-06-21 23:52:42,270 - INFO -     - Product: -0.089
+2026-06-21 23:52:42,271 - INFO -     - ItemsInCart: -0.062
+2026-06-21 23:52:42,272 - INFO -     - PaymentMethod: -0.051
+2026-06-21 23:52:42,275 - INFO -     - ReferralSource: 0.017
+2026-06-21 23:52:42,280 - INFO - 
+ Class: Delivered
+2026-06-21 23:52:42,280 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:52:42,281 - INFO -     + PaymentMethod: 0.100
+2026-06-21 23:52:42,281 - INFO -     + Quantity: 0.094
+2026-06-21 23:52:42,282 - INFO -     + UnitPrice: 0.029
+2026-06-21 23:52:42,283 - INFO -     + CouponCode: 0.018
+2026-06-21 23:52:42,284 - INFO -     + ItemsInCart: -0.020
+2026-06-21 23:52:42,284 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:52:42,285 - INFO -     - ReferralSource: -0.173
+2026-06-21 23:52:42,286 - INFO -     - TotalPrice: -0.096
+2026-06-21 23:52:42,286 - INFO -     - Product: -0.039
+2026-06-21 23:52:42,286 - INFO -     - ItemsInCart: -0.020
+2026-06-21 23:52:42,287 - INFO -     - CouponCode: 0.018
+2026-06-21 23:52:42,288 - INFO - 
+ Class: Pending
+2026-06-21 23:52:42,289 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:52:42,290 - INFO -     + Quantity: 0.129
+2026-06-21 23:52:42,294 - INFO -     + TotalPrice: 0.083
+2026-06-21 23:52:42,295 - INFO -     + ReferralSource: 0.045
+2026-06-21 23:52:42,296 - INFO -     + CouponCode: 0.013
+2026-06-21 23:52:42,296 - INFO -     + Product: -0.000
+2026-06-21 23:52:42,297 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:52:42,297 - INFO -     - PaymentMethod: -0.101
+2026-06-21 23:52:42,297 - INFO -     - ItemsInCart: -0.077
+2026-06-21 23:52:42,298 - INFO -     - UnitPrice: -0.071
+2026-06-21 23:52:42,299 - INFO -     - Product: -0.000
+2026-06-21 23:52:42,299 - INFO -     - CouponCode: 0.013
+2026-06-21 23:52:42,300 - INFO - 
+ Class: Returned
+2026-06-21 23:52:42,300 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:52:42,300 - INFO -     + ItemsInCart: 0.123
+2026-06-21 23:52:42,301 - INFO -     + Product: 0.097
+2026-06-21 23:52:42,301 - INFO -     + UnitPrice: 0.022
+2026-06-21 23:52:42,301 - INFO -     + ReferralSource: -0.019
+2026-06-21 23:52:42,302 - INFO -     + CouponCode: -0.032
+2026-06-21 23:52:42,302 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:52:42,302 - INFO -     - Quantity: -0.209
+2026-06-21 23:52:42,303 - INFO -     - PaymentMethod: -0.116
+2026-06-21 23:52:42,303 - INFO -     - TotalPrice: -0.040
+2026-06-21 23:52:42,303 - INFO -     - CouponCode: -0.032
+2026-06-21 23:52:42,304 - INFO -     - ReferralSource: -0.019
+2026-06-21 23:52:42,304 - INFO - 
+ Class: Shipped
+2026-06-21 23:52:42,305 - INFO -   Top 5 Features INCREASING probability:
+2026-06-21 23:52:42,306 - INFO -     + PaymentMethod: 0.167
+2026-06-21 23:52:42,306 - INFO -     + ReferralSource: 0.130
+2026-06-21 23:52:42,306 - INFO -     + UnitPrice: 0.124
+2026-06-21 23:52:42,312 - INFO -     + ItemsInCart: 0.036
+2026-06-21 23:52:42,313 - INFO -     + Product: 0.031
+2026-06-21 23:52:42,317 - INFO -   Top 5 Features DECREASING probability:
+2026-06-21 23:52:42,318 - INFO -     - TotalPrice: -0.126
+2026-06-21 23:52:42,319 - INFO -     - Quantity: -0.046
+2026-06-21 23:52:42,319 - INFO -     - CouponCode: -0.018
+2026-06-21 23:52:42,320 - INFO -     - Product: 0.031
+2026-06-21 23:52:42,320 - INFO -     - ItemsInCart: 0.036
+2026-06-21 23:52:42,320 - INFO - ------------------------------------------------------------
+2026-06-21 23:52:42,321 - INFO - 
+============================================================
+2026-06-21 23:52:42,321 - INFO - CLASSIFICATION PIPELINE COMPLETED SUCCESSFULLY.
+2026-06-21 23:52:42,322 - INFO - Check 'classification.log', 'classification_results.txt', and 'confusion_matrix.png'
+2026-06-21 23:52:42,322 - INFO - ============================================================
