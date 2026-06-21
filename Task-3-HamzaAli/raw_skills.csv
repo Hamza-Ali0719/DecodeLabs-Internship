@@ -1,0 +1,16 @@
+Job_Role,Python,Java,SQL,Cloud,Automation,JavaScript,React,Docker,Kubernetes,AWS,Azure,GCP,CI/CD,DevOps,Linux,Networking,Cybersecurity,Data_Science,AI/ML,Tableau
+Cloud Architect,0,1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,0,0,0,0
+Backend Engineer,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Frontend Developer,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+Data Scientist,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+DevOps Engineer,0,0,0,1,1,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0
+Cybersecurity Analyst,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0
+Full Stack Developer,1,1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+Data Engineer,1,1,1,1,1,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0
+AI/ML Engineer,1,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0
+Cloud Security Engineer,0,0,1,1,0,0,0,1,1,1,1,1,0,0,0,1,1,0,0,0
+Database Administrator,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Machine Learning Engineer,1,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0
+Site Reliability Engineer,0,0,1,1,1,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0
+Network Engineer,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0
+Business Intelligence Analyst,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1
