@@ -36,6 +36,7 @@ Top matching job roles are returned
 🏗️ Project Structure
 Tech-Stack-Recommender/
 │
+
 ├── tech_stack_recommender.py     # Main AI system
 ├── raw_skills.csv                # Dataset (skills → roles)
 ├── recommendation_log.log       # Logs (auto-generated)
@@ -50,9 +51,10 @@ NumPy	Numerical operations
 Scikit-learn	ML algorithms (TF-IDF, Cosine Similarity)
 Logging	Tracking execution
 🚀 Installation & Setup
-1️⃣ Clone Repository
-git clone https://github.com/your-username/Tech-Stack-Recommender.git
-cd Tech-Stack-Recommender
+1️⃣ Clone the Repository
+git clone https://github.com/Hamza-Ali0719/DecodeLabs-Internship.git
+cd DecodeLabs-Internship/Task-3-HamzaAli
+python tech_stack_recommender.py
 2️⃣ Install Dependencies
 pip install pandas numpy scikit-learn
 3️⃣ Run Project
