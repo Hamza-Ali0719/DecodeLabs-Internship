@@ -44,12 +44,12 @@ The pipeline is designed with professional software engineering principles: Obje
 
 ## 2. Objectives
 
-* To design and implement a reusable, object-oriented machine learning pipeline for multi-class classification.
-* To preprocess a real-world (synthetic) dataset, including cleaning, encoding, and feature scaling.
-* To apply **Logistic Regression** to predict categorical outcomes with high interpretability.
-* To evaluate model performance using multiple metrics and compare against a **Baseline**.
-* To analyze feature importance.
-* To produce professional artifacts such as logs, reports, and visualizations.
+* To design and implement a reusable, object-oriented machine learning pipeline for multi-class classification
+* To preprocess a real-world (synthetic) dataset, including cleaning, encoding, and feature scaling
+* To apply **Logistic Regression** to predict categorical outcomes with high interpretability
+* To evaluate model performance using multiple metrics and compare against a **Baseline**
+* To analyze feature importance
+* To produce professional artifacts such as logs, reports, and visualizations
 
 ---
 
@@ -180,8 +180,8 @@ This project demonstrates a complete ML pipeline with professional practices.
 
 ## 13. References
 
-* Scikit-learn docs
-* Python docs
+* Scikit-learn documentation
+* Python documentation
 
 ---
 
