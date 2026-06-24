@@ -1,0 +1,12 @@
+==================================================
+DECODELABS VISION RECOGNITION REPORT
+Timestamp: 2026-06-24 14:10:35.363419
+Input File: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_4_Image or Text Recognization\sample.jpg
+==================================================
+
+[OBJECTS DETECTED]
+1. person (Confidence: 96.30999755859375%)
+   Location: X=53, Y=96, W=410, H=287
+
+[EXTRACTED TEXT]
+MAKE CHATGPT MORE

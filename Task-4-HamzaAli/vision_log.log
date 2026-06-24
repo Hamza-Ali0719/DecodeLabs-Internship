@@ -1,0 +1,43 @@
+2026-06-24 13:29:54,292 - INFO - Initializing VisionRecognizer...
+2026-06-24 13:29:54,293 - WARNING - Model files not found. Please download them.
+2026-06-24 13:29:54,294 - WARNING - Download 'deploy.prototxt' and 'mobilenet_iter_73000.caffemodel'.
+2026-06-24 13:29:54,294 - INFO - VisionRecognizer ready.
+2026-06-24 13:29:54,294 - ERROR - Test image not found at: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_4_Image or Text Recognization\sample.jpg
+2026-06-24 13:30:23,802 - INFO - Initializing VisionRecognizer...
+2026-06-24 13:30:23,802 - WARNING - Model files not found. Please download them.
+2026-06-24 13:30:23,803 - WARNING - Download 'deploy.prototxt' and 'mobilenet_iter_73000.caffemodel'.
+2026-06-24 13:30:23,804 - INFO - VisionRecognizer ready.
+2026-06-24 13:30:23,805 - ERROR - Test image not found at: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_4_Image or Text Recognization\sample.jpg
+2026-06-24 13:34:05,249 - INFO - Initializing VisionRecognizer...
+2026-06-24 13:34:05,250 - WARNING - Model files not found. Please download them.
+2026-06-24 13:34:05,250 - WARNING - Download 'deploy.prototxt' and 'mobilenet_iter_73000.caffemodel'.
+2026-06-24 13:34:05,250 - INFO - VisionRecognizer ready.
+2026-06-24 13:34:05,251 - INFO - Starting Vision Pipeline for: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_4_Image or Text Recognization\sample.jpg
+2026-06-24 13:34:05,322 - INFO - Performing OCR...
+2026-06-24 13:34:07,820 - INFO - OCR Extracted 0 characters.
+2026-06-24 13:34:07,820 - ERROR - Model not loaded. Skipping object detection.
+2026-06-24 13:34:07,825 - INFO - Annotated image saved to: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_4_Image or Text Recognization\sample_output.jpg
+2026-06-24 13:34:07,828 - INFO - Report saved to: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_4_Image or Text Recognization\sample_results.txt
+2026-06-24 14:00:24,787 - INFO - Initializing VisionRecognizer...
+2026-06-24 14:00:24,990 - INFO - MobileNet-SSD model loaded successfully.
+2026-06-24 14:00:24,990 - INFO - VisionRecognizer ready.
+2026-06-24 14:00:24,991 - INFO - Starting Vision Pipeline for: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_4_Image or Text Recognization\sample.jpg
+2026-06-24 14:00:25,000 - INFO - Performing OCR...
+2026-06-24 14:00:25,388 - INFO - OCR Extracted 0 characters.
+2026-06-24 14:00:25,388 - INFO - Performing Object Detection...
+2026-06-24 14:00:25,663 - INFO - Detected person with 99.88% confidence.
+2026-06-24 14:00:25,663 - INFO - Detected person with 99.60% confidence.
+2026-06-24 14:00:25,664 - INFO - Detected person with 98.87% confidence.
+2026-06-24 14:00:25,665 - INFO - Detected person with 73.07% confidence.
+2026-06-24 14:00:25,669 - INFO - Annotated image saved to: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_4_Image or Text Recognization\sample_output.jpg
+2026-06-24 14:00:25,672 - INFO - Report saved to: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_4_Image or Text Recognization\sample_results.txt
+2026-06-24 14:10:34,572 - INFO - Initializing VisionRecognizer...
+2026-06-24 14:10:34,672 - INFO - MobileNet-SSD model loaded successfully.
+2026-06-24 14:10:34,672 - INFO - VisionRecognizer ready.
+2026-06-24 14:10:34,673 - INFO - Starting Vision Pipeline for: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_4_Image or Text Recognization\sample.jpg
+2026-06-24 14:10:34,693 - INFO - Performing OCR...
+2026-06-24 14:10:35,130 - INFO - OCR Extracted 17 characters.
+2026-06-24 14:10:35,130 - INFO - Performing Object Detection...
+2026-06-24 14:10:35,357 - INFO - Detected person with 96.31% confidence.
+2026-06-24 14:10:35,362 - INFO - Annotated image saved to: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_4_Image or Text Recognization\sample_output.jpg
+2026-06-24 14:10:35,364 - INFO - Report saved to: d:\HAMZA ALI\BS SE\FUTURE\1st Internship\DecodeLabs_Internship\Project_4_Image or Text Recognization\sample_results.txt
