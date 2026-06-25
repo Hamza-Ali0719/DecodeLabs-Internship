@@ -1,91 +1,91 @@
-# DecodeLabs-Internship
-AI &amp; Machine Learning Internship Projects and Learning Journey at Decode Labs
-Batch 2026 | Building the Future, One Rule at a Time
-<p align="center"> <img src="https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white" alt="Python"> <img src="https://img.shields.io/badge/Status-Active-brightgreen" alt="Status"> <img src="https://img.shields.io/badge/DecodeLabs-Batch%202026-orange" alt="Batch"> <img src="https://img.shields.io/badge/AI-Engineer%20Ready-red" alt="AI Engineer"> </p>
-📖 About This Repository
-Welcome to my official internship repository for DecodeLabs.
+# 🚀 DecodeLabs Internship Portfolio (Batch 2026)
 
-This repository serves as the central portfolio for all projects, milestones, and assignments completed during the Batch 2026 AI Internship program.
+**Author:** Hamza Ali  
+**Role:** Artificial Intelligence Intern  
+**Status:** ✅ All 4 Projects Completed  
 
-From Rule-Based Systems to Generative AI Guardrails, this journey documents my transition from a coding enthusiast to a professional Artificial Intelligence Engineer. Here, you will find clean code, structured documentation, and real-world implementations that showcase my grasp of core AI concepts.
+---
 
-"Before you can manage the chaos of a probability engine, you must master the precision of a logic engine." — DecodeLabs Philosophy
+## 📌 Overview
+This repository contains my complete internship portfolio at DecodeLabs. Over the course of 4 weeks, I built and deployed 4 distinct AI systems, covering the full spectrum of Artificial Intelligence — from **Deterministic Logic** to **Probabilistic ML**, **NLP-based Recommendations**, and finally **Computer Vision**.
 
-🗂️ Project Index
-#	Project Name	Domain	Status	Key Skills	Quick Link
-1	Rule-Based AI Chatbot 🤖	Deterministic Logic	✅ Completed	Python, Regex, Hash Maps, Control Flow	View Project
-2	Coming Soon...	Generative AI	⏳ Upcoming	LLMs, APIs	-
-3	Coming Soon...	Hybrid Systems	⏳ Upcoming	Guardrails, Filtering	-
-🛠️ Tech Stack & Skills Demonstrated
-Throughout this internship, I have worked with the following technologies and concepts:
+---
 
-Languages: Python 3.8+, SQL
+## 🗺️ The AI Journey (4 Projects)
 
-Core AI Concepts: Control Flow, Deterministic Logic, Regex Pattern Matching, Hash Maps (Dictionaries)
+| # | Project | Type | Key Skills | Status |
+| :---: | :--- | :--- | :--- | :---: |
+| 1 | [Rule-Based AI Chatbot](Task-1-HamzaAli/) | Deterministic Logic | OOP, Regex, Hash Maps, Logging | ✅ |
+| 2 | [E-Commerce Order Classification](Task-2-HamzaAli/) | Supervised ML | Logistic Regression, Pandas, Sklearn | ✅ |
+| 3 | [Tech Stack Recommender](Task-3-HamzaAli/) | Content-Based Filtering | TF-IDF, Cosine Similarity, NLP | ✅ |
+| 4 | [Visual Recognition Engine](Task-4-HamzaAli/) | Computer Vision | OpenCV, MobileNet-SSD, Tesseract OCR | ✅ |
 
-Best Practices: OOP (Object-Oriented Programming), Error Handling, Logging, Type Hinting
+---
 
-Tools: Git, GitHub, VS Code, Virtual Environments
+## 🧠 Project 1: Rule-Based AI Chatbot
+> *"The White Box"*
 
-Soft Skills: Technical Documentation, Code Reviews, Problem-Solving
+A deterministic chatbot built using pure Python logic. It handles greetings, basic queries, and exits using a hash-map (dictionary) instead of an `if-elif` ladder to ensure O(1) constant time complexity.
 
-📁 Repository Structure
-text
-DecodeLabs-Internship/
-│
-├── Project-1-Chatbot/               # Rule-Based AI Chatbot
-│   ├── chatbot.py                   # Main application
-│   ├── README.md                    # Detailed project docs
-│   └── chatbot.log                  # (Generated) Interaction logs
-│
-├── Project-2/                       # (Future Project)
-│   └── ...
-│
-├── assets/                          # Images, diagrams, demos
-│   └── demo.gif                     # Screenshots of running projects
-│
-├── README.md                        # 🟢 This file (Master Overview)
-└── .gitignore                       # Ignored files (caches, logs, etc.)
-🚦 Getting Started (For Evaluators & Visitors)
-To explore my work, follow these simple steps:
+- **Tech:** Python, Dictionaries, Regex, OOP
+- **Highlight:** Zero hallucination, 100% traceable logic.
 
-Clone the repository:
+---
 
-bash
-git clone https://github.com/Hamza-Ali0719/DecodeLabs-Internship.git
-cd DecodeLabs-Internship
+## 📊 Project 2: E-Commerce Order Status Classification
+> *"The Probabilistic Mind"*
 
+A Logistic Regression pipeline that predicts `OrderStatus` (5 classes) from 1,200 order records. Handles data leakage, feature encoding, and scaling.
 
-bash
-cd Project-1-Chatbot
+- **Tech:** Scikit-learn, Pandas, NumPy, LabelEncoder, StandardScaler
+- **Highlight:** Professional confusion matrix visualization and classification report.
 
+---
 
-bash
-python chatbot.py
+## 💡 Project 3: Tech Stack Recommender
+> *"The Similarity Engine"*
 
-bash
-cat chatbot.log
-🏆 Achievements & Milestones
-✅ Project 1 Submission: Completed the Rule-Based Chatbot with advanced regex matching, multiple response variations, and full logging.
+An AI-powered recommender that matches user skills to 15+ job roles using TF-IDF Vectorization and Cosine Similarity. Outputs top-3 roles with percentage scores.
 
-✅ Code Quality: Implemented OOP, PEP-8 guidelines, and professional documentation.
+- **Tech:** TF-IDF, Cosine Similarity, Content-Based Filtering
+- **Highlight:** Progress bar visualization and pure mathematical matching.
 
-✅ Readiness: Successfully built a "White Box" AI system with zero hallucination risk.
+---
 
-👤 Author
-Hamza Ali
-AI Intern | Batch 2026
+## 👁️ Project 4: Visual Recognition Engine
+> *"The Machine's Optic Nerve"*
 
-GitHub: github.com/Hamza Ali
+A hybrid computer vision pipeline that performs OCR (text extraction) and Object Detection (MobileNet-SSD) simultaneously on a single image. Draws bounding boxes and saves structured reports.
 
-LinkedIn: www.linkedin.com/in/hamza-ali-433b8332a
+- **Tech:** OpenCV (cv2.dnn), Tesseract OCR, MobileNet-SSD, Transfer Learning
+- **Highlight:** Achieved 96.31% confidence on person detection, extracted 17 characters.
 
-Email: hamzaali.se24@gmail.com
+---
 
-🙏 Acknowledgements
-A huge thank you to the DecodeLabs Team for providing this incredible learning opportunity and for pushing the interns to build industry-grade solutions. Special thanks to the mentors for their invaluable guidance throughout this foundational phase.
+## ⚙️ Common Tech Stack (Across All Projects)
+- **Languages:** Python 3.14
+- **Libraries:** OpenCV, Scikit-learn, Pandas, NumPy, Tesseract
+- **Tools:** VS Code, Git, GitHub, Logging
+- **Methodology:** OOP, File Handling, Exception Handling, Logging, Documentation
 
-📜 License
-This repository is part of the DecodeLabs internship curriculum. All code is shared for educational and evaluation purposes under the MIT License.
+---
 
-<p align="center"> <b>Made with ❤️ and a lot of <code>if-else</code> statements.</b><br> <i>Greater Lucknow, India | Batch 2026</i> </p>
+## 🎯 Key Achievements
+- Built **4 production-grade AI systems** from scratch.
+- Mastered the transition from **deterministic** to **probabilistic** to **perceptual** AI.
+- Maintained **professional documentation** (README, Logs, Reports) for every project.
+- Fixed complex Windows environment issues (PATH, hidden extensions, pip dependencies).
+
+---
+
+## 📎 Conclusion
+This portfolio demonstrates a comprehensive understanding of the Artificial Intelligence ecosystem. I am proud to have completed all 4 milestones and earned the **Top Performer** badge. 
+
+Thank you, DecodeLabs, for this incredible hands-on journey.
+
+---
+
+**👨‍💻 Hamza Ali**  
+📍 Greater Lucknow, India / Pakistan (Remote)  
+📅 June 2026  
+🔗 [GitHub Profile](https://github.com/Hamza-Ali0719)
